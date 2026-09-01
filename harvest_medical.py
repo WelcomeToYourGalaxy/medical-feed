@@ -46,13 +46,27 @@ from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime, timezone
 from email.utils import parsedate_to_datetime
 
+# The shared gazetteer. Placement used to be each wire's own short country
+# table, which put most of every wire in a counter marked "unplaced"; this is
+# the fleet's common one, and it is optional at import so a harvest still runs
+# if the data file has not been fetched yet.
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+try:
+    import galaxy_places
+    _GAZETTEER = True
+except Exception as _exc:                       # noqa: BLE001
+    print("  ! gazetteer unavailable (%s); falling back to the local table"
+          % _exc, file=sys.stderr)
+    galaxy_places = None
+    _GAZETTEER = False
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 SOURCES_PATH = os.path.join(HERE, "sources_medical.json")
 OUT_PATH = os.path.join(HERE, "wire_medical.json")
 
 RETAIN_DAYS = 45
 MAX_ITEMS = 1200
-WORKERS = 10         # a few hundred wires now
+WORKERS = 14         # ~460 wires now: 26 languages, each asked in its own
 NOTABLE_SCORE = 3       # at or above this a story is marked as consequential
 
 # --------------------------------------------------------------------------
@@ -76,9 +90,24 @@ def build_gnews_url(loc):
     return ("https://news.google.com/rss/search?q=" + urllib.parse.quote(q) +
             "&hl=" + loc["hl"] + "&gl=" + loc["gl"] + "&ceid=" + loc["ceid"])
 
+READ_BUDGET_MIN = 40          # minutes spent reading wires
+
+# The wall-clock budget for reading wires. Past it the remaining sources are
+# recorded unreachable and the harvest finishes on what it has, because the
+# wire is only written at the end of run() and a job killed by the workflow
+# timeout commits nothing at all — which is how a feed gets stuck stale.
+DEADLINE = None
+
+
+def out_of_time():
+    return DEADLINE is not None and time.monotonic() > DEADLINE
+
+
 def fetch(url, tries=3):
     last = None
     for attempt in range(tries):
+        if out_of_time():
+            return None
         try:
             req = urllib.request.Request(url, headers={
                 "User-Agent": USER_AGENT,
@@ -91,6 +120,16 @@ def fetch(url, tries=3):
                 if resp.headers.get("Content-Encoding") == "gzip":
                     raw = gzip.GzipFile(fileobj=io.BytesIO(raw)).read()
                 return raw
+        except urllib.error.HTTPError as exc:
+            last = exc
+            # Being rate-limited or refused is an answer, not a hiccup. Trying
+            # the same query twice more against the same limiter spends eighty
+            # seconds of a worker slot to be told the same thing, and deepens
+            # the throttle for every other query in the run.
+            if exc.code in (403, 429, 451):
+                time.sleep(1.5)
+                break
+            time.sleep(1.5 * (attempt + 1))
         except Exception as exc:                       # noqa: BLE001 — report, don't crash the run
             last = exc
             time.sleep(1.5 * (attempt + 1))
@@ -751,6 +790,203 @@ DECIDED_C = _compile_all(DECIDED)
 INSTITUTIONAL_C = _compile_all(INSTITUTIONAL)
 MEASURED_C = _compile_all(MEASURED)
 PENDING_C = _compile_all(PENDING)
+# ------------------------------------------------------------------
+# The subjects, in the languages the queries now ask in.
+#
+# The payments subject had been written in the vocabulary of the US
+# disclosure system — "Open Payments", "physician payments" — which has
+# no counterpart phrase in most of the languages this wire reaches,
+# where the same practice is reported as gifts, hospitality, sponsored
+# congresses and consultancy fees. It carried zero stories.
+# ------------------------------------------------------------------
+LOCAL_TERMS = {
+    "capture": [
+        ("draaideur", None), ("drehtür arzneimittelbehörde", None),
+        ("drzwi obrotowe", None), ("döner kapı", None),
+        ("pantouflage", None), ("porta giratória", None),
+        ("porte girevoli aifa", None), ("puertas giratorias", None),
+        ("вращающаяся дверь", None), ("天下り 厚労省", None),
+        ("旋转门 药监局", None), ("전관예우 식약처", None),
+    ],
+    "contamination": [
+        ("besmet medicijn", None), ("blutskandal", None),
+        ("dawa bandia", None), ("farmaco contaminato", None),
+        ("förorenat läkemedel", None), ("gefälschte medikamente", None),
+        ("kontamine ilaç", None), ("maganin jabu", None),
+        ("medicamento contaminado", None), ("medicamento falsificado", None),
+        ("médicament contaminé", None), ("obat palsu", None),
+        ("obat tercemar", None), ("sahte ilaç", None),
+        ("sang contaminé", None), ("sangre contaminada", None),
+        ("sangue contaminado", None), ("sangue infetto", None),
+        ("skażony lek", None), ("thuốc giả", None),
+        ("thuốc nhiễm bẩn", None), ("verunreinigtes arzneimittel", None),
+        ("μολυσμένο φάρμακο", None), ("загрязнённый препарат", None),
+        ("фальсифицированные лекарства", None), ("фальсифіковані ліки", None),
+        ("أدوية مزيفة", None), ("داروی آلوده", None),
+        ("دواء ملوث", None), ("दूषित दवा", None),
+        ("नकली दवा", None), ("দূষিত ওষুধ", None),
+        ("ยาปนเปื้อน", None), ("ยาปลอม", None),
+        ("የተበከለ መድኃኒት", None), ("假药", None),
+        ("偽造医薬品", None), ("医薬品 汚染", None),
+        ("药品污染", None), ("薬害エイズ", None),
+        ("오염된 의약품", None), ("위조 의약품", None),
+    ],
+    "global": [
+        ("farmaci scadenti", None), ("medicamentos de baja calidad", None),
+        ("medicamentos de má qualidade", None), ("minderwertige medikamente", None),
+        ("médicaments de qualité inférieure", None), ("obat substandar", None),
+        ("أدوية دون المستوى", None),
+    ],
+    "harm": [
+        ("bijwerkingen medicijnen", None), ("działania niepożądane leków", None),
+        ("efek samping obat", None), ("effets indésirables médicaments", None),
+        ("ilaç yan etkisi", None), ("läkemedelsbiverkningar", None),
+        ("madhara ya dawa", None), ("nebenwirkungen todesfälle", None),
+        ("reacciones adversas a medicamentos", None), ("reazioni avverse farmaci", None),
+        ("reações adversas a medicamentos", None), ("tác dụng phụ thuốc", None),
+        ("παρενέργειες φαρμάκων", None), ("побочные эффекты лекарств", None),
+        ("побічні дії ліків", None), ("الآثار الجانبية للأدوية", None),
+        ("عوارض جانبی دارو", None), ("दवा के दुष्प्रभाव", None),
+        ("ওষুধের পার্শ্বপ্রতিক্রিয়া", None), ("ผลข้างเคียงยา", None),
+        ("药物不良反应", None), ("薬の副作用", None),
+        ("약물 부작용", None),
+    ],
+    "marketing": [
+        ("off-label promotie", None), ("off-label-werbung", None),
+        ("promoción ilegal de medicamentos", None), ("promocja poza wskazaniami", None),
+        ("promotion hors amm", None), ("promozione off-label", None),
+        ("promoção irregular de medicamentos", None), ("publicidad engañosa de fármacos", None),
+        ("продвижение вне показаний", None),
+    ],
+    "overdiagnosis": [
+        ("aşırı tanı", None), ("chẩn đoán quá mức", None),
+        ("diagnosis berlebihan", None), ("naddiagnostyka", None),
+        ("overdiagnose", None), ("sobrediagnóstico", None),
+        ("sobretratamiento", None), ("sovradiagnosi", None),
+        ("sovratrattamento", None), ("surdiagnostic", None),
+        ("surtraitement", None), ("överdiagnostik", None),
+        ("überdiagnose", None), ("übertherapie", None),
+        ("υπερδιάγνωση", None), ("гипердиагностика", None),
+        ("гіпердіагностика", None), ("الإفراط في التشخيص", None),
+        ("تشخیص بیش از حد", None), ("अति निदान", None),
+        ("অতিরিক্ত রোগনির্ণয়", None), ("การวินิจฉัยเกินจำเป็น", None),
+        ("病気づくり", None), ("过度诊断", None),
+        ("過剰診断", None), ("과잉 진단", None),
+    ],
+    "payments": [
+        ("betalingen farmaceuten", None), ("brindes a médicos", None),
+        ("cadeaux des laboratoires", None), ("gratifikasi dokter", None),
+        ("hoa hồng cho bác sĩ", None), ("ilaç firmalarından doktorlara ödemeler", None),
+        ("liens d'intérêts", None), ("läkemedelsbolagens betalningar", None),
+        ("malipo ya kampuni za dawa", None), ("obsequios de la industria", None),
+        ("pagamenti delle case farmaceutiche", None), ("pagamentos da indústria farmacêutica", None),
+        ("pagos de farmacéuticas", None), ("płatności firm farmaceutycznych", None),
+        ("transparence santé", None), ("transparenzkodex", None),
+        ("zahlungen der pharmaindustrie", None), ("πληρωμές φαρμακευτικών εταιρειών", None),
+        ("виплати фармкомпаній", None), ("выплаты фармкомпаний", None),
+        ("مدفوعات شركات الأدوية للأطباء", None), ("پرداخت شرکت‌های دارویی به پزشکان", None),
+        ("दवा कंपनियों से डॉक्टरों को भुगतान", None), ("ওষুধ কোম্পানি থেকে চিকিৎসকদের অর্থ", None),
+        ("บริษัทยาจ่ายเงินให้แพทย์", None), ("የመድኃኒት ኩባንያዎች ለሐኪሞች ክፍያ", None),
+        ("医師 謝金", None), ("医生回扣", None),
+        ("药企向医生付款", None), ("製薬会社から医師", None),
+        ("醫師 費用 透明", None), ("리베이트", None),
+        ("제약사 의사 리베이트", None),
+    ],
+    "prescribing": [
+        ("aşırı reçete", None), ("iperprescrizione", None),
+        ("kuandika dawa kupita kiasi", None), ("kê đơn quá mức", None),
+        ("nadmierne przepisywanie leków", None), ("overbehandeling voorschrijven", None),
+        ("peresepan berlebihan", None), ("prescripción inadecuada", None),
+        ("prescription inappropriée", None), ("prescrizione inappropriata", None),
+        ("prescrição excessiva", None), ("prescrição inadequada", None),
+        ("sobreprescripción", None), ("surprescription", None),
+        ("överförskrivning", None), ("überverordnung", None),
+        ("υπερσυνταγογράφηση", None), ("избыточное назначение лекарств", None),
+        ("надмірне призначення ліків", None), ("الإفراط في وصف الأدوية", None),
+        ("تجویز بی‌رویه دارو", None), ("अत्यधिक दवा", None),
+        ("অতিরিক্ত ওষুধ", None), ("สั่งยาเกินจำเป็น", None),
+        ("过度用药", None), ("過剰処方", None),
+        ("과잉 처방", None),
+    ],
+    "procedures": [
+        ("actes inutiles", None), ("cirugías innecesarias", None),
+        ("cirurgias desnecessárias", None), ("exames desnecessários", None),
+        ("gereksiz ameliyat", None), ("interventi inutili", None),
+        ("niepotrzebne operacje", None), ("onnodige operaties", None),
+        ("onödiga operationer", None), ("operasi tidak perlu", None),
+        ("phẫu thuật không cần thiết", None), ("procedimientos innecesarios", None),
+        ("unnötige operationen", None), ("περιττές επεμβάσεις", None),
+        ("ненужные операции", None), ("عمليات جراحية غير ضرورية", None),
+        ("अनावश्यक सर्जरी", None), ("ผ่าตัดโดยไม่จำเป็น", None),
+        ("不必要な手術", None), ("不必要的手术", None),
+        ("불필요한 수술", None),
+    ],
+    "trials": [
+        ("dados ocultados", None), ("dane z badań ukryte", None),
+        ("dati sperimentazione nascosti", None), ("données dissimulées", None),
+        ("ensayo clínico datos ocultados", None), ("onderzoeksgegevens achtergehouden", None),
+        ("studiendaten zurückgehalten", None), ("çalışma verileri gizlendi", None),
+        ("данные исследования скрыты", None), ("إخفاء بيانات التجارب السريرية", None),
+        ("临床试验数据隐瞒", None), ("臨床試験 データ隠蔽", None),
+        ("임상시험 자료 은폐", None),
+    ],
+}
+
+for _tid, _label, _terms in TOPICS:
+    _terms.extend(LOCAL_TERMS.get(_tid, []))
+
+# ------------------------------------------------------------------
+# Subjects this wire had a name for and never asked about.
+#
+# The terms below were already here and were well written; what was
+# missing was any query aimed at them, so they held zero stories
+# however much the world published. These are the phrases from the
+# queries now added, so what is fetched can be filed.
+# ------------------------------------------------------------------
+FILL_TERMS = {
+    "alternatives": [
+        ("campagna contro la", None), ("campagne contre le", None),
+        ("campanha contra o", None), ("campaña contra el", None),
+        ("deprescribing programm", None), ("deprescrizione programma", None),
+        ("desprescripción programa", None), ("desprescrição programa", None),
+        ("déprescription programme", None), ("fare di più non significa fare meglio", None),
+        ("kampagne gegen überdiagnose", None), ("klug entscheiden", None),
+        ("no hacer", None), ("処方の見直し 減薬", None),
+        ("過剰診断 啓発 活動", None), ("과잉진단 캠페인", None),
+        ("처방 축소 프로그램", None),
+    ],
+    "guidelines": [
+        ("auteurs de recommandations", None), ("autores de diretrizes", None),
+        ("autores de guías", None), ("autori delle linee", None),
+        ("groupe de recommandations", None), ("leitlinien-autoren interessenkonflikte", None),
+        ("leitliniengremium industriezahlungen", None), ("painel de diretrizes", None),
+        ("panel de guías", None), ("panel di linee", None),
+        ("临床指南 制定者 利益冲突", None), ("治疗标准 放宽", None),
+        ("治療基準 拡大", None), ("診療ガイドライン 作成委員 利益相反", None),
+        ("진료지침 위원 이해충돌", None), ("치료 기준 확대", None),
+    ],
+}
+
+for _tid, _label, _terms in TOPICS:
+    _terms.extend(FILL_TERMS.get(_tid, []))
+
+
+# --------------------------------------------------------------------------
+# The same subjects in the languages this wire's own queries ask in, derived
+# from those queries and filed under the subject each query's label names. The
+# gate above was written in English; the queries were translated and it was
+# not, so three quarters of what the wire fetched could not be recognised once
+# it arrived. Generated — edit topics_multilingual.json, or delete the file to
+# turn this off.
+# --------------------------------------------------------------------------
+_EXTRA_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                           "topics_multilingual.json")
+if os.path.exists(_EXTRA_PATH):
+    with open(_EXTRA_PATH, encoding="utf-8") as _fh:
+        _EXTRA = json.load(_fh)
+    TOPICS = [(tid, label, terms + [(t, g) for t, g in _EXTRA.get(tid, [])])
+              for tid, label, terms in TOPICS]
+
 TOPICS_C = [(tid, label, [(_compile(t), _compile_all(g) if g else None) for t, g in terms])
             for tid, label, terms in TOPICS]
 GEO3_C = [(rid, rlabel, [(sid, slabel, [(pid, plabel, _compile_all(terms))
@@ -1339,19 +1575,91 @@ def scene_first(text, places):
         (scene if _is_scene(text, _first_pos(text, terms.get(pid, []))) else rest).append(pid)
     return scene + rest
 
-def point_for(text, places, subs, regions):
-    """The most specific point a story resolved to: a named sub-national place
-    if there is one, otherwise the country, otherwise the subregion or region.
-    Returns (label_or_None, point_or_None)."""
+
+# --------------------------------------------------------------------------
+# The gazetteer answers with a country; this wire's taxonomy is keyed on ids
+# whose leading token is that country's ISO-2. Filing a placed story under its
+# region is therefore a lookup, not a guess. Where a country is split across
+# several places, only region and subregion are filled: which of the places a
+# story belongs to is a question the country code cannot answer.
+# --------------------------------------------------------------------------
+ISO_REGION = {}
+for _rid, _rlabel, _subs in GEO3:
+    for _sid, _slabel, _places in _subs:
+        for _pid, _plabel, _terms in _places:
+            _iso = _pid.split("-")[0].lower()
+            if len(_iso) == 2:
+                ISO_REGION.setdefault(_iso, (_rid, _sid))
+
+
+def file_by_country(row, cc):
+    """Put a gazetteer-placed story in its region, if the wire has one."""
+    if not cc:
+        return
+    hit = ISO_REGION.get(str(cc).lower())
+    if not hit:
+        return
+    rid, sid = hit
+    if not row.get("w") or row["w"] == ["unlocated"]:
+        row["w"] = [rid]
+    if not row.get("sr") or row["sr"] == ["unlocated"]:
+        row["sr"] = [sid]
+
+
+
+def country_for(raw, locale=None):
+    """The ISO-2 the placement resolved to, or None."""
+    if not _GAZETTEER:
+        return None
+    try:
+        return galaxy_places.resolve_full(raw, locale)[4]
+    except Exception:
+        return None
+
+
+def point_for(text, places, subs, regions, locale=None, raw=None):
+    """The most specific point a story resolved to.
+
+    The order is deliberate. This wire's own curated table goes first: it holds
+    the places this subject actually turns up and the country list it was
+    written against, and it beats a general gazetteer on its own ground. The
+    shared gazetteer follows but only overrides at the settlement level, so a
+    headline naming Kharkiv pins on Kharkiv rather than the middle of Ukraine,
+    while a country reading from this wire's own table still wins over a
+    country reading from the gazetteer. Then the bodies that stand for a
+    jurisdiction without naming it — EFSA is a European story, ANVISA a
+    Brazilian one. Last, and weakest, the country the source itself reports
+    from.
+
+    Returns (label_or_None, point_or_None, approx). approx is True only for
+    that last case, where nothing in the story placed it and the point is the
+    reporting locale rather than the scene. The page draws those hollow.
+    """
     label, point = precise_for(text)
     if point:
-        return label, point
+        return label, point, False
+
+    glabel, gpoint, grank = None, None, -1
+    if _GAZETTEER:
+        glabel, gpoint, grank, _approx = galaxy_places.resolve_ranked(raw or text)
+        if grank == 3:
+            return glabel, gpoint, False
+
     places = scene_first(text, places)
     for level in (places, subs, regions):
         for pid in level:
             if pid in COORDS:
-                return None, COORDS[pid]
-    return None, None
+                return None, COORDS[pid], False
+
+    if gpoint:
+        return glabel, gpoint, False
+
+    if _GAZETTEER and locale:
+        llabel, lpoint, _lrank, lapprox = galaxy_places.resolve_ranked("", locale)
+        if lpoint:
+            return llabel, lpoint, lapprox
+
+    return None, None, False
 
 
 def load_sources():
@@ -1365,12 +1673,15 @@ def load_sources():
         for loc in cfg.get(block, []):
             srcs.append({"name": prefix + loc["label"], "lang": loc["lang"],
                          "standing": loc["standing"], "region": loc["standing"],
-                         "kind": "news", "url": build_gnews_url(loc)})
+                         "kind": "news", "url": build_gnews_url(loc), "gl": loc.get("gl")})
     return srcs, cfg
 
 
 def run(dry_run=False, fixtures=None):
+    global DEADLINE
     sources, cfg = load_sources()
+    if not fixtures:
+        DEADLINE = time.monotonic() + READ_BUDGET_MIN * 60
     print("Reading %d wires…" % len(sources))
 
     def read(src):
@@ -1430,7 +1741,12 @@ def run(dry_run=False, fixtures=None):
                 row["w"] = regions
                 row["sr"] = subs
                 row["pl"] = places
-                row["pn"], row["ll"] = point_for(text, places, subs, regions)
+                row["gl"] = src.get("gl")
+                _raw = (row["t"] or "") + " " + (row.get("s") or "")
+                row["pn"], row["ll"], row["pa"] = point_for(
+                    text, places, subs, regions, src.get("gl"), _raw)
+                if row["ll"]:
+                    file_by_country(row, country_for(_raw, src.get("gl")))
                 row["p"] = total
                 row["y"] = reasons
                 row["st"] = src["standing"]
@@ -1443,8 +1759,23 @@ def run(dry_run=False, fixtures=None):
 
     fresh_urls = {canon_url(i["u"]) for i in items}
     for row in previous:
-        if "x" in row:
-            absorb(row)
+        if "x" not in row:
+            continue
+        # A retained story is placed again rather than carried forward with the
+        # answer it happened to get the day it was first read. RETAIN_DAYS is
+        # 45, so without this a change to the placement layer takes a month and
+        # a half to reach the map, and a story never re-fetched keeps its first
+        # answer for good. Rows already holding a point resolved from their own
+        # text are left alone; only the unplaced and the source-country
+        # approximations are reconsidered.
+        if not row.get("ll") or row.get("pa"):
+            _raw = ((row.get("t") or "") + " " + (row.get("s") or ""))
+            row["pn"], row["ll"], row["pa"] = point_for(
+                _raw.lower(), row.get("pl") or [], row.get("sr") or [],
+                row.get("w") or [], row.get("gl"), _raw)
+            if row["ll"]:
+                file_by_country(row, country_for(_raw, row.get("gl")))
+        absorb(row)
 
     cutoff = int(time.time() * 1000) - RETAIN_DAYS * 86400000
     items = [i for i in items if (i.get("d") or cutoff + 1) >= cutoff]

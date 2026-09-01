@@ -1,1594 +1,3892 @@
 {
-  "_note": [
-    "Sources for the medical wire.",
-    "",
-    "This is a feed on the conduct of the medical industries. It is not a source",
-    "of medical advice, and the gate refuses health-and-wellness coverage,",
-    "symptom explainers and individual patient stories for that reason.",
-    "",
-    "direct: feeds proven working in the sibling Welcome to Your Galaxy repos.",
-    "  Nothing invented — an untested feed URL reports itself unreachable on every",
-    "  harvest and quietly makes the coverage figure a lie.",
-    "",
-    "gnews: Google News locale searches; the harvester builds the URL from",
-    "  hl / gl / ceid. Twenty-four queries rotate across 46 locales.",
-    "",
-    "events: subject searches for regulators, inquiries and evidence reviews.",
-    "",
-    "standing is provenance, not importance:",
-    "  official  medicines regulators, courts, prosecutors, public inquiries",
-    "  research  journals, evidence reviews, payments and pricing research",
-    "  press     general news across the locales",
-    "  rights    patient, access and privacy organisations",
-    "",
-    "Worth adding, with URLs you have opened: the BMJ, The Lancet, Cochrane,",
-    "Health Action International, Medicines Law & Policy, No Free Lunch, AllTrials,",
-    "Public Citizen's Health Research Group, and national medicines regulators."
-  ],
-  "direct": [
-    {
-      "name": "World Health Organization",
-      "lang": "en",
-      "standing": "official",
-      "url": "https://www.who.int/rss-feeds/news-english.xml"
-    },
-    {
-      "name": "US Department of Justice",
-      "lang": "en",
-      "standing": "official",
-      "url": "https://www.justice.gov/feeds/opa/justice-news.xml"
-    },
-    {
-      "name": "European Commission",
-      "lang": "en",
-      "standing": "official",
-      "url": "https://ec.europa.eu/commission/presscorner/api/rss"
-    },
-    {
-      "name": "OHCHR — news",
-      "lang": "en",
-      "standing": "official",
-      "url": "https://www.ohchr.org/en/rss/news"
-    },
-    {
-      "name": "UN News — Human Rights",
-      "lang": "en",
-      "standing": "official",
-      "url": "https://news.un.org/feed/subscribe/en/news/topic/human-rights/feed/rss.xml"
-    },
-    {
-      "name": "OECD",
-      "lang": "en",
-      "standing": "official",
-      "url": "https://www.oecd.org/newsroom/index.xml"
-    },
-    {
-      "name": "World Bank",
-      "lang": "en",
-      "standing": "official",
-      "url": "https://www.worldbank.org/en/news/all?format=rss"
-    },
-    {
-      "name": "European Court of Human Rights",
-      "lang": "en",
-      "standing": "official",
-      "url": "https://www.echr.coe.int/rss"
-    },
-    {
-      "name": "Europol",
-      "lang": "en",
-      "standing": "official",
-      "url": "https://www.europol.europa.eu/rss.xml"
-    },
-    {
-      "name": "Business & Human Rights Resource Centre",
-      "lang": "en",
-      "standing": "research",
-      "url": "https://www.business-humanrights.org/en/rss/"
-    },
-    {
-      "name": "Transparency International",
-      "lang": "en",
-      "standing": "research",
-      "url": "https://www.transparency.org/en/rss"
-    },
-    {
-      "name": "Corporate Europe Observatory",
-      "lang": "en",
-      "standing": "research",
-      "url": "https://corporateeurope.org/en/rss.xml"
-    },
-    {
-      "name": "Bellingcat",
-      "lang": "en",
-      "standing": "research",
-      "url": "https://www.bellingcat.com/feed/"
-    },
-    {
-      "name": "ODI",
-      "lang": "en",
-      "standing": "research",
-      "url": "https://odi.org/en/feed/"
-    },
-    {
-      "name": "CEPR",
-      "lang": "en",
-      "standing": "research",
-      "url": "https://cepr.org/rss.xml"
-    },
-    {
-      "name": "Peterson Institute",
-      "lang": "en",
-      "standing": "research",
-      "url": "https://www.piie.com/rss.xml"
-    },
-    {
-      "name": "Tax Justice Network",
-      "lang": "en",
-      "standing": "research",
-      "url": "https://taxjustice.net/feed/"
-    },
-    {
-      "name": "Public Citizen · Global Trade Watch",
-      "lang": "en",
-      "standing": "rights",
-      "url": "https://www.citizen.org/feed/"
-    },
-    {
-      "name": "Human Rights Watch",
-      "lang": "en",
-      "standing": "rights",
-      "url": "https://www.hrw.org/rss/news"
-    },
-    {
-      "name": "Amnesty International",
-      "lang": "en",
-      "standing": "rights",
-      "url": "https://www.amnesty.org/en/rss/"
-    },
-    {
-      "name": "Privacy International",
-      "lang": "en",
-      "standing": "rights",
-      "url": "https://privacyinternational.org/rss.xml"
-    },
-    {
-      "name": "EDRi",
-      "lang": "en",
-      "standing": "rights",
-      "url": "https://edri.org/feed/"
-    },
-    {
-      "name": "Access Now",
-      "lang": "en",
-      "standing": "rights",
-      "url": "https://www.accessnow.org/feed/"
-    },
-    {
-      "name": "Statewatch",
-      "lang": "en",
-      "standing": "rights",
-      "url": "https://www.statewatch.org/rss/"
-    },
-    {
-      "name": "Article 19",
-      "lang": "en",
-      "standing": "rights",
-      "url": "https://www.article19.org/feed/"
-    },
-    {
-      "name": "Harm Reduction International",
-      "lang": "en",
-      "standing": "rights",
-      "url": "https://hri.global/feed/"
-    },
-    {
-      "name": "Global Witness",
-      "lang": "en",
-      "standing": "rights",
-      "url": "https://www.globalwitness.org/en/rss/"
-    },
-    {
-      "name": "The Intercept",
-      "lang": "en",
-      "standing": "press",
-      "url": "https://theintercept.com/feed/?rss"
-    },
-    {
-      "name": "The Marshall Project",
-      "lang": "en",
-      "standing": "press",
-      "url": "https://www.themarshallproject.org/rss/recent.rss"
-    }
-  ],
-  "gnews": [
-    {
-      "label": "English (US) 1",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "\"payments to doctors\" OR \"Open Payments\" OR \"physician payments\" prescribing"
-    },
-    {
-      "label": "English (US) 2",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "overprescribing OR \"inappropriate prescribing\" OR prescribing rates study"
-    },
-    {
-      "label": "English (US) 3",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "overdiagnosis OR overtreatment OR \"disease mongering\""
-    },
-    {
-      "label": "English (UK) 4",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-GB",
-      "gl": "GB",
-      "ceid": "GB:en-GB",
-      "query": "\"unnecessary procedures\" OR \"low-value care\" OR unnecessary surgery"
-    },
-    {
-      "label": "English (UK) 5",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-GB",
-      "gl": "GB",
-      "ceid": "GB:en-GB",
-      "query": "\"adverse events\" drug OR \"black box warning\" OR drug withdrawn safety"
-    },
-    {
-      "label": "English (UK) 6",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-GB",
-      "gl": "GB",
-      "ceid": "GB:en-GB",
-      "query": "\"clinical trial\" data withheld OR unpublished results OR publication bias"
-    },
-    {
-      "label": "English (India) 7",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-IN",
-      "gl": "IN",
-      "ceid": "IN:en",
-      "query": "\"accelerated approval\" OR \"advisory committee\" overruled OR approval criticised"
-    },
-    {
-      "label": "English (India) 8",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-IN",
-      "gl": "IN",
-      "ceid": "IN:en",
-      "query": "\"regulatory capture\" pharmaceutical OR \"revolving door\" FDA OR EMA industry"
-    },
-    {
-      "label": "English (India) 9",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-IN",
-      "gl": "IN",
-      "ceid": "IN:en",
-      "query": "\"off-label promotion\" OR \"direct-to-consumer advertising\" drug OR misleading promotion"
-    },
-    {
-      "label": "English (Nigeria) 10",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-NG",
-      "gl": "NG",
-      "ceid": "NG:en",
-      "query": "\"clinical guideline\" conflict of interest OR guideline panel industry payments"
-    },
-    {
-      "label": "English (Nigeria) 11",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-NG",
-      "gl": "NG",
-      "ceid": "NG:en",
-      "query": "\"drug pricing\" OR \"price gouging\" medicine OR patent evergreening"
-    },
-    {
-      "label": "English (Nigeria) 12",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-NG",
-      "gl": "NG",
-      "ceid": "NG:en",
-      "query": "\"prior authorisation\" OR claim denied insurer OR \"medical debt\""
-    },
-    {
-      "label": "English (South Africa) 13",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-ZA",
-      "gl": "ZA",
-      "ceid": "ZA:en",
-      "query": "\"medical device\" recall OR implant failure OR \"notified body\" approval"
-    },
-    {
-      "label": "English (South Africa) 14",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-ZA",
-      "gl": "ZA",
-      "ceid": "ZA:en",
-      "query": "\"opioid settlement\" OR benzodiazepine dependence OR prescribed addiction"
-    },
-    {
-      "label": "English (South Africa) 15",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-ZA",
-      "gl": "ZA",
-      "ceid": "ZA:en",
-      "query": "\"contaminated blood\" OR \"infected blood\" inquiry OR falsified medicine"
-    },
-    {
-      "label": "English (Australia) 16",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-AU",
-      "gl": "AU",
-      "ceid": "AU:en",
-      "query": "\"clinical trial\" conducted abroad OR informed consent breach OR ethics approval missing"
-    },
-    {
-      "label": "English (Australia) 17",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-AU",
-      "gl": "AU",
-      "ceid": "AU:en",
-      "query": "\"health data\" sold OR patient data breach OR medical records shared"
-    },
-    {
-      "label": "English (Australia) 18",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-AU",
-      "gl": "AU",
-      "ceid": "AU:en",
-      "query": "antidepressant prescribing OR antipsychotic care home OR ADHD diagnosis rates"
-    },
-    {
-      "label": "English (Kenya) 19",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-KE",
-      "gl": "KE",
-      "ceid": "KE:en",
-      "query": "\"whistleblower\" pharmaceutical OR \"false claims act\" healthcare fraud"
-    },
-    {
-      "label": "English (Kenya) 20",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-KE",
-      "gl": "KE",
-      "ceid": "KE:en",
-      "query": "\"research misconduct\" OR fabricated data trial OR retracted study medicine"
-    },
-    {
-      "label": "English (Kenya) 21",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-KE",
-      "gl": "KE",
-      "ceid": "KE:en",
-      "query": "\"access to medicine\" OR \"compulsory licence\" OR essential medicines shortage"
-    },
-    {
-      "label": "English (Philippines) 22",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-PH",
-      "gl": "PH",
-      "ceid": "PH:en",
-      "query": "\"private equity\" hospital OR clinic acquisition healthcare"
-    },
-    {
-      "label": "English (Philippines) 23",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-PH",
-      "gl": "PH",
-      "ceid": "PH:en",
-      "query": "\"pharmaceutical lobbying\" OR pharma lobby spending OR drug industry influence"
-    },
-    {
-      "label": "English (Philippines) 24",
-      "lang": "en",
-      "standing": "press",
-      "hl": "en-PH",
-      "gl": "PH",
-      "ceid": "PH:en",
-      "query": "\"patient safety\" inquiry OR harmed patients campaign OR medical scandal"
-    },
-    {
-      "label": "Spanish (Spain) 25",
-      "lang": "es",
-      "standing": "press",
-      "hl": "es",
-      "gl": "ES",
-      "ceid": "ES:es",
-      "query": "\"payments to doctors\" OR \"Open Payments\" OR \"physician payments\" prescribing"
-    },
-    {
-      "label": "Spanish (Spain) 26",
-      "lang": "es",
-      "standing": "press",
-      "hl": "es",
-      "gl": "ES",
-      "ceid": "ES:es",
-      "query": "overprescribing OR \"inappropriate prescribing\" OR prescribing rates study"
-    },
-    {
-      "label": "Spanish (Spain) 27",
-      "lang": "es",
-      "standing": "press",
-      "hl": "es",
-      "gl": "ES",
-      "ceid": "ES:es",
-      "query": "overdiagnosis OR overtreatment OR \"disease mongering\""
-    },
-    {
-      "label": "Spanish (Mexico) 28",
-      "lang": "es",
-      "standing": "press",
-      "hl": "es-419",
-      "gl": "MX",
-      "ceid": "MX:es-419",
-      "query": "\"unnecessary procedures\" OR \"low-value care\" OR unnecessary surgery"
-    },
-    {
-      "label": "Spanish (Mexico) 29",
-      "lang": "es",
-      "standing": "press",
-      "hl": "es-419",
-      "gl": "MX",
-      "ceid": "MX:es-419",
-      "query": "\"adverse events\" drug OR \"black box warning\" OR drug withdrawn safety"
-    },
-    {
-      "label": "Spanish (Mexico) 30",
-      "lang": "es",
-      "standing": "press",
-      "hl": "es-419",
-      "gl": "MX",
-      "ceid": "MX:es-419",
-      "query": "\"clinical trial\" data withheld OR unpublished results OR publication bias"
-    },
-    {
-      "label": "Spanish (Argentina) 31",
-      "lang": "es",
-      "standing": "press",
-      "hl": "es-419",
-      "gl": "AR",
-      "ceid": "AR:es-419",
-      "query": "\"accelerated approval\" OR \"advisory committee\" overruled OR approval criticised"
-    },
-    {
-      "label": "Spanish (Argentina) 32",
-      "lang": "es",
-      "standing": "press",
-      "hl": "es-419",
-      "gl": "AR",
-      "ceid": "AR:es-419",
-      "query": "\"regulatory capture\" pharmaceutical OR \"revolving door\" FDA OR EMA industry"
-    },
-    {
-      "label": "Spanish (Argentina) 33",
-      "lang": "es",
-      "standing": "press",
-      "hl": "es-419",
-      "gl": "AR",
-      "ceid": "AR:es-419",
-      "query": "\"off-label promotion\" OR \"direct-to-consumer advertising\" drug OR misleading promotion"
-    },
-    {
-      "label": "Spanish (Colombia) 34",
-      "lang": "es",
-      "standing": "press",
-      "hl": "es-419",
-      "gl": "CO",
-      "ceid": "CO:es-419",
-      "query": "\"clinical guideline\" conflict of interest OR guideline panel industry payments"
-    },
-    {
-      "label": "Spanish (Colombia) 35",
-      "lang": "es",
-      "standing": "press",
-      "hl": "es-419",
-      "gl": "CO",
-      "ceid": "CO:es-419",
-      "query": "\"drug pricing\" OR \"price gouging\" medicine OR patent evergreening"
-    },
-    {
-      "label": "Spanish (Colombia) 36",
-      "lang": "es",
-      "standing": "press",
-      "hl": "es-419",
-      "gl": "CO",
-      "ceid": "CO:es-419",
-      "query": "\"prior authorisation\" OR claim denied insurer OR \"medical debt\""
-    },
-    {
-      "label": "French (France) 37",
-      "lang": "fr",
-      "standing": "press",
-      "hl": "fr",
-      "gl": "FR",
-      "ceid": "FR:fr",
-      "query": "\"medical device\" recall OR implant failure OR \"notified body\" approval"
-    },
-    {
-      "label": "French (France) 38",
-      "lang": "fr",
-      "standing": "press",
-      "hl": "fr",
-      "gl": "FR",
-      "ceid": "FR:fr",
-      "query": "\"opioid settlement\" OR benzodiazepine dependence OR prescribed addiction"
-    },
-    {
-      "label": "French (France) 39",
-      "lang": "fr",
-      "standing": "press",
-      "hl": "fr",
-      "gl": "FR",
-      "ceid": "FR:fr",
-      "query": "\"contaminated blood\" OR \"infected blood\" inquiry OR falsified medicine"
-    },
-    {
-      "label": "French (Senegal) 40",
-      "lang": "fr",
-      "standing": "press",
-      "hl": "fr",
-      "gl": "SN",
-      "ceid": "SN:fr",
-      "query": "\"clinical trial\" conducted abroad OR informed consent breach OR ethics approval missing"
-    },
-    {
-      "label": "French (Senegal) 41",
-      "lang": "fr",
-      "standing": "press",
-      "hl": "fr",
-      "gl": "SN",
-      "ceid": "SN:fr",
-      "query": "\"health data\" sold OR patient data breach OR medical records shared"
-    },
-    {
-      "label": "French (Senegal) 42",
-      "lang": "fr",
-      "standing": "press",
-      "hl": "fr",
-      "gl": "SN",
-      "ceid": "SN:fr",
-      "query": "antidepressant prescribing OR antipsychotic care home OR ADHD diagnosis rates"
-    },
-    {
-      "label": "French (Canada) 43",
-      "lang": "fr",
-      "standing": "press",
-      "hl": "fr",
-      "gl": "CA",
-      "ceid": "CA:fr",
-      "query": "\"whistleblower\" pharmaceutical OR \"false claims act\" healthcare fraud"
-    },
-    {
-      "label": "French (Canada) 44",
-      "lang": "fr",
-      "standing": "press",
-      "hl": "fr",
-      "gl": "CA",
-      "ceid": "CA:fr",
-      "query": "\"research misconduct\" OR fabricated data trial OR retracted study medicine"
-    },
-    {
-      "label": "French (Canada) 45",
-      "lang": "fr",
-      "standing": "press",
-      "hl": "fr",
-      "gl": "CA",
-      "ceid": "CA:fr",
-      "query": "\"access to medicine\" OR \"compulsory licence\" OR essential medicines shortage"
-    },
-    {
-      "label": "Portuguese (Brazil) 46",
-      "lang": "pt",
-      "standing": "press",
-      "hl": "pt-BR",
-      "gl": "BR",
-      "ceid": "BR:pt-419",
-      "query": "\"private equity\" hospital OR clinic acquisition healthcare"
-    },
-    {
-      "label": "Portuguese (Brazil) 47",
-      "lang": "pt",
-      "standing": "press",
-      "hl": "pt-BR",
-      "gl": "BR",
-      "ceid": "BR:pt-419",
-      "query": "\"pharmaceutical lobbying\" OR pharma lobby spending OR drug industry influence"
-    },
-    {
-      "label": "Portuguese (Brazil) 48",
-      "lang": "pt",
-      "standing": "press",
-      "hl": "pt-BR",
-      "gl": "BR",
-      "ceid": "BR:pt-419",
-      "query": "\"patient safety\" inquiry OR harmed patients campaign OR medical scandal"
-    },
-    {
-      "label": "Portuguese (Portugal) 49",
-      "lang": "pt",
-      "standing": "press",
-      "hl": "pt-PT",
-      "gl": "PT",
-      "ceid": "PT:pt-150",
-      "query": "\"payments to doctors\" OR \"Open Payments\" OR \"physician payments\" prescribing"
-    },
-    {
-      "label": "Portuguese (Portugal) 50",
-      "lang": "pt",
-      "standing": "press",
-      "hl": "pt-PT",
-      "gl": "PT",
-      "ceid": "PT:pt-150",
-      "query": "overprescribing OR \"inappropriate prescribing\" OR prescribing rates study"
-    },
-    {
-      "label": "Portuguese (Portugal) 51",
-      "lang": "pt",
-      "standing": "press",
-      "hl": "pt-PT",
-      "gl": "PT",
-      "ceid": "PT:pt-150",
-      "query": "overdiagnosis OR overtreatment OR \"disease mongering\""
-    },
-    {
-      "label": "Portuguese (Angola) 52",
-      "lang": "pt",
-      "standing": "press",
-      "hl": "pt-PT",
-      "gl": "AO",
-      "ceid": "AO:pt-150",
-      "query": "\"unnecessary procedures\" OR \"low-value care\" OR unnecessary surgery"
-    },
-    {
-      "label": "Portuguese (Angola) 53",
-      "lang": "pt",
-      "standing": "press",
-      "hl": "pt-PT",
-      "gl": "AO",
-      "ceid": "AO:pt-150",
-      "query": "\"adverse events\" drug OR \"black box warning\" OR drug withdrawn safety"
-    },
-    {
-      "label": "Portuguese (Angola) 54",
-      "lang": "pt",
-      "standing": "press",
-      "hl": "pt-PT",
-      "gl": "AO",
-      "ceid": "AO:pt-150",
-      "query": "\"clinical trial\" data withheld OR unpublished results OR publication bias"
-    },
-    {
-      "label": "German (Germany) 55",
-      "lang": "de",
-      "standing": "press",
-      "hl": "de",
-      "gl": "DE",
-      "ceid": "DE:de",
-      "query": "\"accelerated approval\" OR \"advisory committee\" overruled OR approval criticised"
-    },
-    {
-      "label": "German (Germany) 56",
-      "lang": "de",
-      "standing": "press",
-      "hl": "de",
-      "gl": "DE",
-      "ceid": "DE:de",
-      "query": "\"regulatory capture\" pharmaceutical OR \"revolving door\" FDA OR EMA industry"
-    },
-    {
-      "label": "German (Germany) 57",
-      "lang": "de",
-      "standing": "press",
-      "hl": "de",
-      "gl": "DE",
-      "ceid": "DE:de",
-      "query": "\"off-label promotion\" OR \"direct-to-consumer advertising\" drug OR misleading promotion"
-    },
-    {
-      "label": "German (Austria) 58",
-      "lang": "de",
-      "standing": "press",
-      "hl": "de",
-      "gl": "AT",
-      "ceid": "AT:de",
-      "query": "\"clinical guideline\" conflict of interest OR guideline panel industry payments"
-    },
-    {
-      "label": "German (Austria) 59",
-      "lang": "de",
-      "standing": "press",
-      "hl": "de",
-      "gl": "AT",
-      "ceid": "AT:de",
-      "query": "\"drug pricing\" OR \"price gouging\" medicine OR patent evergreening"
-    },
-    {
-      "label": "German (Austria) 60",
-      "lang": "de",
-      "standing": "press",
-      "hl": "de",
-      "gl": "AT",
-      "ceid": "AT:de",
-      "query": "\"prior authorisation\" OR claim denied insurer OR \"medical debt\""
-    },
-    {
-      "label": "Russian (Russia) 61",
-      "lang": "ru",
-      "standing": "press",
-      "hl": "ru",
-      "gl": "RU",
-      "ceid": "RU:ru",
-      "query": "\"medical device\" recall OR implant failure OR \"notified body\" approval"
-    },
-    {
-      "label": "Russian (Russia) 62",
-      "lang": "ru",
-      "standing": "press",
-      "hl": "ru",
-      "gl": "RU",
-      "ceid": "RU:ru",
-      "query": "\"opioid settlement\" OR benzodiazepine dependence OR prescribed addiction"
-    },
-    {
-      "label": "Russian (Russia) 63",
-      "lang": "ru",
-      "standing": "press",
-      "hl": "ru",
-      "gl": "RU",
-      "ceid": "RU:ru",
-      "query": "\"contaminated blood\" OR \"infected blood\" inquiry OR falsified medicine"
-    },
-    {
-      "label": "Russian (Kazakhstan) 64",
-      "lang": "ru",
-      "standing": "press",
-      "hl": "ru",
-      "gl": "KZ",
-      "ceid": "KZ:ru",
-      "query": "\"clinical trial\" conducted abroad OR informed consent breach OR ethics approval missing"
-    },
-    {
-      "label": "Russian (Kazakhstan) 65",
-      "lang": "ru",
-      "standing": "press",
-      "hl": "ru",
-      "gl": "KZ",
-      "ceid": "KZ:ru",
-      "query": "\"health data\" sold OR patient data breach OR medical records shared"
-    },
-    {
-      "label": "Russian (Kazakhstan) 66",
-      "lang": "ru",
-      "standing": "press",
-      "hl": "ru",
-      "gl": "KZ",
-      "ceid": "KZ:ru",
-      "query": "antidepressant prescribing OR antipsychotic care home OR ADHD diagnosis rates"
-    },
-    {
-      "label": "Arabic (Egypt) 67",
-      "lang": "ar",
-      "standing": "press",
-      "hl": "ar",
-      "gl": "EG",
-      "ceid": "EG:ar",
-      "query": "\"whistleblower\" pharmaceutical OR \"false claims act\" healthcare fraud"
-    },
-    {
-      "label": "Arabic (Egypt) 68",
-      "lang": "ar",
-      "standing": "press",
-      "hl": "ar",
-      "gl": "EG",
-      "ceid": "EG:ar",
-      "query": "\"research misconduct\" OR fabricated data trial OR retracted study medicine"
-    },
-    {
-      "label": "Arabic (Egypt) 69",
-      "lang": "ar",
-      "standing": "press",
-      "hl": "ar",
-      "gl": "EG",
-      "ceid": "EG:ar",
-      "query": "\"access to medicine\" OR \"compulsory licence\" OR essential medicines shortage"
-    },
-    {
-      "label": "Arabic (UAE) 70",
-      "lang": "ar",
-      "standing": "press",
-      "hl": "ar",
-      "gl": "AE",
-      "ceid": "AE:ar",
-      "query": "\"private equity\" hospital OR clinic acquisition healthcare"
-    },
-    {
-      "label": "Arabic (UAE) 71",
-      "lang": "ar",
-      "standing": "press",
-      "hl": "ar",
-      "gl": "AE",
-      "ceid": "AE:ar",
-      "query": "\"pharmaceutical lobbying\" OR pharma lobby spending OR drug industry influence"
-    },
-    {
-      "label": "Arabic (UAE) 72",
-      "lang": "ar",
-      "standing": "press",
-      "hl": "ar",
-      "gl": "AE",
-      "ceid": "AE:ar",
-      "query": "\"patient safety\" inquiry OR harmed patients campaign OR medical scandal"
-    },
-    {
-      "label": "Arabic (Lebanon) 73",
-      "lang": "ar",
-      "standing": "press",
-      "hl": "ar",
-      "gl": "LB",
-      "ceid": "LB:ar",
-      "query": "\"payments to doctors\" OR \"Open Payments\" OR \"physician payments\" prescribing"
-    },
-    {
-      "label": "Arabic (Lebanon) 74",
-      "lang": "ar",
-      "standing": "press",
-      "hl": "ar",
-      "gl": "LB",
-      "ceid": "LB:ar",
-      "query": "overprescribing OR \"inappropriate prescribing\" OR prescribing rates study"
-    },
-    {
-      "label": "Arabic (Lebanon) 75",
-      "lang": "ar",
-      "standing": "press",
-      "hl": "ar",
-      "gl": "LB",
-      "ceid": "LB:ar",
-      "query": "overdiagnosis OR overtreatment OR \"disease mongering\""
-    },
-    {
-      "label": "Chinese (Mainland) 76",
-      "lang": "zh",
-      "standing": "press",
-      "hl": "zh-CN",
-      "gl": "CN",
-      "ceid": "CN:zh-Hans",
-      "query": "\"unnecessary procedures\" OR \"low-value care\" OR unnecessary surgery"
-    },
-    {
-      "label": "Chinese (Mainland) 77",
-      "lang": "zh",
-      "standing": "press",
-      "hl": "zh-CN",
-      "gl": "CN",
-      "ceid": "CN:zh-Hans",
-      "query": "\"adverse events\" drug OR \"black box warning\" OR drug withdrawn safety"
-    },
-    {
-      "label": "Chinese (Mainland) 78",
-      "lang": "zh",
-      "standing": "press",
-      "hl": "zh-CN",
-      "gl": "CN",
-      "ceid": "CN:zh-Hans",
-      "query": "\"clinical trial\" data withheld OR unpublished results OR publication bias"
-    },
-    {
-      "label": "Chinese (Taiwan) 79",
-      "lang": "zh",
-      "standing": "press",
-      "hl": "zh-TW",
-      "gl": "TW",
-      "ceid": "TW:zh-Hant",
-      "query": "\"accelerated approval\" OR \"advisory committee\" overruled OR approval criticised"
-    },
-    {
-      "label": "Chinese (Taiwan) 80",
-      "lang": "zh",
-      "standing": "press",
-      "hl": "zh-TW",
-      "gl": "TW",
-      "ceid": "TW:zh-Hant",
-      "query": "\"regulatory capture\" pharmaceutical OR \"revolving door\" FDA OR EMA industry"
-    },
-    {
-      "label": "Chinese (Taiwan) 81",
-      "lang": "zh",
-      "standing": "press",
-      "hl": "zh-TW",
-      "gl": "TW",
-      "ceid": "TW:zh-Hant",
-      "query": "\"off-label promotion\" OR \"direct-to-consumer advertising\" drug OR misleading promotion"
-    },
-    {
-      "label": "Chinese (Hong Kong) 82",
-      "lang": "zh",
-      "standing": "press",
-      "hl": "zh-HK",
-      "gl": "HK",
-      "ceid": "HK:zh-Hant",
-      "query": "\"clinical guideline\" conflict of interest OR guideline panel industry payments"
-    },
-    {
-      "label": "Chinese (Hong Kong) 83",
-      "lang": "zh",
-      "standing": "press",
-      "hl": "zh-HK",
-      "gl": "HK",
-      "ceid": "HK:zh-Hant",
-      "query": "\"drug pricing\" OR \"price gouging\" medicine OR patent evergreening"
-    },
-    {
-      "label": "Chinese (Hong Kong) 84",
-      "lang": "zh",
-      "standing": "press",
-      "hl": "zh-HK",
-      "gl": "HK",
-      "ceid": "HK:zh-Hant",
-      "query": "\"prior authorisation\" OR claim denied insurer OR \"medical debt\""
-    },
-    {
-      "label": "Hindi (India) 85",
-      "lang": "hi",
-      "standing": "press",
-      "hl": "hi",
-      "gl": "IN",
-      "ceid": "IN:hi",
-      "query": "\"medical device\" recall OR implant failure OR \"notified body\" approval"
-    },
-    {
-      "label": "Hindi (India) 86",
-      "lang": "hi",
-      "standing": "press",
-      "hl": "hi",
-      "gl": "IN",
-      "ceid": "IN:hi",
-      "query": "\"opioid settlement\" OR benzodiazepine dependence OR prescribed addiction"
-    },
-    {
-      "label": "Hindi (India) 87",
-      "lang": "hi",
-      "standing": "press",
-      "hl": "hi",
-      "gl": "IN",
-      "ceid": "IN:hi",
-      "query": "\"contaminated blood\" OR \"infected blood\" inquiry OR falsified medicine"
-    },
-    {
-      "label": "Bengali (Bangladesh) 88",
-      "lang": "bn",
-      "standing": "press",
-      "hl": "bn",
-      "gl": "BD",
-      "ceid": "BD:bn",
-      "query": "\"clinical trial\" conducted abroad OR informed consent breach OR ethics approval missing"
-    },
-    {
-      "label": "Bengali (Bangladesh) 89",
-      "lang": "bn",
-      "standing": "press",
-      "hl": "bn",
-      "gl": "BD",
-      "ceid": "BD:bn",
-      "query": "\"health data\" sold OR patient data breach OR medical records shared"
-    },
-    {
-      "label": "Bengali (Bangladesh) 90",
-      "lang": "bn",
-      "standing": "press",
-      "hl": "bn",
-      "gl": "BD",
-      "ceid": "BD:bn",
-      "query": "antidepressant prescribing OR antipsychotic care home OR ADHD diagnosis rates"
-    },
-    {
-      "label": "Indonesian 91",
-      "lang": "id",
-      "standing": "press",
-      "hl": "id",
-      "gl": "ID",
-      "ceid": "ID:id",
-      "query": "\"whistleblower\" pharmaceutical OR \"false claims act\" healthcare fraud"
-    },
-    {
-      "label": "Indonesian 92",
-      "lang": "id",
-      "standing": "press",
-      "hl": "id",
-      "gl": "ID",
-      "ceid": "ID:id",
-      "query": "\"research misconduct\" OR fabricated data trial OR retracted study medicine"
-    },
-    {
-      "label": "Indonesian 93",
-      "lang": "id",
-      "standing": "press",
-      "hl": "id",
-      "gl": "ID",
-      "ceid": "ID:id",
-      "query": "\"access to medicine\" OR \"compulsory licence\" OR essential medicines shortage"
-    },
-    {
-      "label": "Japanese 94",
-      "lang": "ja",
-      "standing": "press",
-      "hl": "ja",
-      "gl": "JP",
-      "ceid": "JP:ja",
-      "query": "\"private equity\" hospital OR clinic acquisition healthcare"
-    },
-    {
-      "label": "Japanese 95",
-      "lang": "ja",
-      "standing": "press",
-      "hl": "ja",
-      "gl": "JP",
-      "ceid": "JP:ja",
-      "query": "\"pharmaceutical lobbying\" OR pharma lobby spending OR drug industry influence"
-    },
-    {
-      "label": "Japanese 96",
-      "lang": "ja",
-      "standing": "press",
-      "hl": "ja",
-      "gl": "JP",
-      "ceid": "JP:ja",
-      "query": "\"patient safety\" inquiry OR harmed patients campaign OR medical scandal"
-    },
-    {
-      "label": "Korean 97",
-      "lang": "ko",
-      "standing": "press",
-      "hl": "ko",
-      "gl": "KR",
-      "ceid": "KR:ko",
-      "query": "\"payments to doctors\" OR \"Open Payments\" OR \"physician payments\" prescribing"
-    },
-    {
-      "label": "Korean 98",
-      "lang": "ko",
-      "standing": "press",
-      "hl": "ko",
-      "gl": "KR",
-      "ceid": "KR:ko",
-      "query": "overprescribing OR \"inappropriate prescribing\" OR prescribing rates study"
-    },
-    {
-      "label": "Korean 99",
-      "lang": "ko",
-      "standing": "press",
-      "hl": "ko",
-      "gl": "KR",
-      "ceid": "KR:ko",
-      "query": "overdiagnosis OR overtreatment OR \"disease mongering\""
-    },
-    {
-      "label": "Turkish 100",
-      "lang": "tr",
-      "standing": "press",
-      "hl": "tr",
-      "gl": "TR",
-      "ceid": "TR:tr",
-      "query": "\"unnecessary procedures\" OR \"low-value care\" OR unnecessary surgery"
-    },
-    {
-      "label": "Turkish 101",
-      "lang": "tr",
-      "standing": "press",
-      "hl": "tr",
-      "gl": "TR",
-      "ceid": "TR:tr",
-      "query": "\"adverse events\" drug OR \"black box warning\" OR drug withdrawn safety"
-    },
-    {
-      "label": "Turkish 102",
-      "lang": "tr",
-      "standing": "press",
-      "hl": "tr",
-      "gl": "TR",
-      "ceid": "TR:tr",
-      "query": "\"clinical trial\" data withheld OR unpublished results OR publication bias"
-    },
-    {
-      "label": "Italian 103",
-      "lang": "it",
-      "standing": "press",
-      "hl": "it",
-      "gl": "IT",
-      "ceid": "IT:it",
-      "query": "\"accelerated approval\" OR \"advisory committee\" overruled OR approval criticised"
-    },
-    {
-      "label": "Italian 104",
-      "lang": "it",
-      "standing": "press",
-      "hl": "it",
-      "gl": "IT",
-      "ceid": "IT:it",
-      "query": "\"regulatory capture\" pharmaceutical OR \"revolving door\" FDA OR EMA industry"
-    },
-    {
-      "label": "Italian 105",
-      "lang": "it",
-      "standing": "press",
-      "hl": "it",
-      "gl": "IT",
-      "ceid": "IT:it",
-      "query": "\"off-label promotion\" OR \"direct-to-consumer advertising\" drug OR misleading promotion"
-    },
-    {
-      "label": "Dutch 106",
-      "lang": "nl",
-      "standing": "press",
-      "hl": "nl",
-      "gl": "NL",
-      "ceid": "NL:nl",
-      "query": "\"clinical guideline\" conflict of interest OR guideline panel industry payments"
-    },
-    {
-      "label": "Dutch 107",
-      "lang": "nl",
-      "standing": "press",
-      "hl": "nl",
-      "gl": "NL",
-      "ceid": "NL:nl",
-      "query": "\"drug pricing\" OR \"price gouging\" medicine OR patent evergreening"
-    },
-    {
-      "label": "Dutch 108",
-      "lang": "nl",
-      "standing": "press",
-      "hl": "nl",
-      "gl": "NL",
-      "ceid": "NL:nl",
-      "query": "\"prior authorisation\" OR claim denied insurer OR \"medical debt\""
-    },
-    {
-      "label": "Polish 109",
-      "lang": "pl",
-      "standing": "press",
-      "hl": "pl",
-      "gl": "PL",
-      "ceid": "PL:pl",
-      "query": "\"medical device\" recall OR implant failure OR \"notified body\" approval"
-    },
-    {
-      "label": "Polish 110",
-      "lang": "pl",
-      "standing": "press",
-      "hl": "pl",
-      "gl": "PL",
-      "ceid": "PL:pl",
-      "query": "\"opioid settlement\" OR benzodiazepine dependence OR prescribed addiction"
-    },
-    {
-      "label": "Polish 111",
-      "lang": "pl",
-      "standing": "press",
-      "hl": "pl",
-      "gl": "PL",
-      "ceid": "PL:pl",
-      "query": "\"contaminated blood\" OR \"infected blood\" inquiry OR falsified medicine"
-    },
-    {
-      "label": "Swedish 112",
-      "lang": "sv",
-      "standing": "press",
-      "hl": "sv",
-      "gl": "SE",
-      "ceid": "SE:sv",
-      "query": "\"clinical trial\" conducted abroad OR informed consent breach OR ethics approval missing"
-    },
-    {
-      "label": "Swedish 113",
-      "lang": "sv",
-      "standing": "press",
-      "hl": "sv",
-      "gl": "SE",
-      "ceid": "SE:sv",
-      "query": "\"health data\" sold OR patient data breach OR medical records shared"
-    },
-    {
-      "label": "Swedish 114",
-      "lang": "sv",
-      "standing": "press",
-      "hl": "sv",
-      "gl": "SE",
-      "ceid": "SE:sv",
-      "query": "antidepressant prescribing OR antipsychotic care home OR ADHD diagnosis rates"
-    },
-    {
-      "label": "Ukrainian 115",
-      "lang": "uk",
-      "standing": "press",
-      "hl": "uk",
-      "gl": "UA",
-      "ceid": "UA:uk",
-      "query": "\"whistleblower\" pharmaceutical OR \"false claims act\" healthcare fraud"
-    },
-    {
-      "label": "Ukrainian 116",
-      "lang": "uk",
-      "standing": "press",
-      "hl": "uk",
-      "gl": "UA",
-      "ceid": "UA:uk",
-      "query": "\"research misconduct\" OR fabricated data trial OR retracted study medicine"
-    },
-    {
-      "label": "Ukrainian 117",
-      "lang": "uk",
-      "standing": "press",
-      "hl": "uk",
-      "gl": "UA",
-      "ceid": "UA:uk",
-      "query": "\"access to medicine\" OR \"compulsory licence\" OR essential medicines shortage"
-    },
-    {
-      "label": "Greek 118",
-      "lang": "el",
-      "standing": "press",
-      "hl": "el",
-      "gl": "GR",
-      "ceid": "GR:el",
-      "query": "\"private equity\" hospital OR clinic acquisition healthcare"
-    },
-    {
-      "label": "Greek 119",
-      "lang": "el",
-      "standing": "press",
-      "hl": "el",
-      "gl": "GR",
-      "ceid": "GR:el",
-      "query": "\"pharmaceutical lobbying\" OR pharma lobby spending OR drug industry influence"
-    },
-    {
-      "label": "Greek 120",
-      "lang": "el",
-      "standing": "press",
-      "hl": "el",
-      "gl": "GR",
-      "ceid": "GR:el",
-      "query": "\"patient safety\" inquiry OR harmed patients campaign OR medical scandal"
-    },
-    {
-      "label": "Persian 121",
-      "lang": "fa",
-      "standing": "press",
-      "hl": "fa",
-      "gl": "IR",
-      "ceid": "IR:fa",
-      "query": "\"payments to doctors\" OR \"Open Payments\" OR \"physician payments\" prescribing"
-    },
-    {
-      "label": "Persian 122",
-      "lang": "fa",
-      "standing": "press",
-      "hl": "fa",
-      "gl": "IR",
-      "ceid": "IR:fa",
-      "query": "overprescribing OR \"inappropriate prescribing\" OR prescribing rates study"
-    },
-    {
-      "label": "Persian 123",
-      "lang": "fa",
-      "standing": "press",
-      "hl": "fa",
-      "gl": "IR",
-      "ceid": "IR:fa",
-      "query": "overdiagnosis OR overtreatment OR \"disease mongering\""
-    },
-    {
-      "label": "Vietnamese 124",
-      "lang": "vi",
-      "standing": "press",
-      "hl": "vi",
-      "gl": "VN",
-      "ceid": "VN:vi",
-      "query": "\"unnecessary procedures\" OR \"low-value care\" OR unnecessary surgery"
-    },
-    {
-      "label": "Vietnamese 125",
-      "lang": "vi",
-      "standing": "press",
-      "hl": "vi",
-      "gl": "VN",
-      "ceid": "VN:vi",
-      "query": "\"adverse events\" drug OR \"black box warning\" OR drug withdrawn safety"
-    },
-    {
-      "label": "Vietnamese 126",
-      "lang": "vi",
-      "standing": "press",
-      "hl": "vi",
-      "gl": "VN",
-      "ceid": "VN:vi",
-      "query": "\"clinical trial\" data withheld OR unpublished results OR publication bias"
-    },
-    {
-      "label": "Thai 127",
-      "lang": "th",
-      "standing": "press",
-      "hl": "th",
-      "gl": "TH",
-      "ceid": "TH:th",
-      "query": "\"accelerated approval\" OR \"advisory committee\" overruled OR approval criticised"
-    },
-    {
-      "label": "Thai 128",
-      "lang": "th",
-      "standing": "press",
-      "hl": "th",
-      "gl": "TH",
-      "ceid": "TH:th",
-      "query": "\"regulatory capture\" pharmaceutical OR \"revolving door\" FDA OR EMA industry"
-    },
-    {
-      "label": "Thai 129",
-      "lang": "th",
-      "standing": "press",
-      "hl": "th",
-      "gl": "TH",
-      "ceid": "TH:th",
-      "query": "\"off-label promotion\" OR \"direct-to-consumer advertising\" drug OR misleading promotion"
-    },
-    {
-      "label": "Swahili (Kenya) 130",
-      "lang": "sw",
-      "standing": "press",
-      "hl": "sw",
-      "gl": "KE",
-      "ceid": "KE:sw",
-      "query": "\"clinical guideline\" conflict of interest OR guideline panel industry payments"
-    },
-    {
-      "label": "Swahili (Kenya) 131",
-      "lang": "sw",
-      "standing": "press",
-      "hl": "sw",
-      "gl": "KE",
-      "ceid": "KE:sw",
-      "query": "\"drug pricing\" OR \"price gouging\" medicine OR patent evergreening"
-    },
-    {
-      "label": "Swahili (Kenya) 132",
-      "lang": "sw",
-      "standing": "press",
-      "hl": "sw",
-      "gl": "KE",
-      "ceid": "KE:sw",
-      "query": "\"prior authorisation\" OR claim denied insurer OR \"medical debt\""
-    },
-    {
-      "label": "Amharic (Ethiopia) 133",
-      "lang": "am",
-      "standing": "press",
-      "hl": "am",
-      "gl": "ET",
-      "ceid": "ET:am",
-      "query": "\"medical device\" recall OR implant failure OR \"notified body\" approval"
-    },
-    {
-      "label": "Amharic (Ethiopia) 134",
-      "lang": "am",
-      "standing": "press",
-      "hl": "am",
-      "gl": "ET",
-      "ceid": "ET:am",
-      "query": "\"opioid settlement\" OR benzodiazepine dependence OR prescribed addiction"
-    },
-    {
-      "label": "Amharic (Ethiopia) 135",
-      "lang": "am",
-      "standing": "press",
-      "hl": "am",
-      "gl": "ET",
-      "ceid": "ET:am",
-      "query": "\"contaminated blood\" OR \"infected blood\" inquiry OR falsified medicine"
-    },
-    {
-      "label": "Hausa (Nigeria) 136",
-      "lang": "ha",
-      "standing": "press",
-      "hl": "ha",
-      "gl": "NG",
-      "ceid": "NG:ha",
-      "query": "\"clinical trial\" conducted abroad OR informed consent breach OR ethics approval missing"
-    },
-    {
-      "label": "Hausa (Nigeria) 137",
-      "lang": "ha",
-      "standing": "press",
-      "hl": "ha",
-      "gl": "NG",
-      "ceid": "NG:ha",
-      "query": "\"health data\" sold OR patient data breach OR medical records shared"
-    },
-    {
-      "label": "Hausa (Nigeria) 138",
-      "lang": "ha",
-      "standing": "press",
-      "hl": "ha",
-      "gl": "NG",
-      "ceid": "NG:ha",
-      "query": "antidepressant prescribing OR antipsychotic care home OR ADHD diagnosis rates"
-    }
-  ],
-  "events": [
-    {
-      "label": "WHO and agency findings",
-      "lang": "en",
-      "standing": "official",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "WHO medicines report OR essential medicines list OR substandard falsified medical products"
-    },
-    {
-      "label": "Regulator actions",
-      "lang": "en",
-      "standing": "official",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "FDA warning letter OR EMA referral OR MHRA action drug device safety"
-    },
-    {
-      "label": "Approvals and withdrawals",
-      "lang": "en",
-      "standing": "official",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "drug approval withdrawn OR accelerated approval revoked OR device recall class"
-    },
-    {
-      "label": "Court rulings and settlements",
-      "lang": "en",
-      "standing": "official",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "pharmaceutical settlement OR drug company fined OR device litigation verdict"
-    },
-    {
-      "label": "Public inquiries",
-      "lang": "en",
-      "standing": "official",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "\"public inquiry\" infected blood OR medical implant OR patient harm inquiry"
-    },
-    {
-      "label": "Payments research",
-      "lang": "en",
-      "standing": "research",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "\"Open Payments\" analysis OR industry payments prescribing study"
-    },
-    {
-      "label": "Trial transparency",
-      "lang": "en",
-      "standing": "research",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "trial results unreported OR AllTrials OR clinical trial transparency audit"
-    },
-    {
-      "label": "Evidence reviews",
-      "lang": "en",
-      "standing": "research",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "Cochrane review OR systematic review drug efficacy questioned"
-    },
-    {
-      "label": "Overdiagnosis research",
-      "lang": "en",
-      "standing": "research",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "overdiagnosis study OR screening harms OR diagnostic threshold widened"
-    },
-    {
-      "label": "Pricing and patents",
-      "lang": "en",
-      "standing": "research",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "drug pricing analysis OR patent thicket medicine OR pay-for-delay"
-    },
-    {
-      "label": "Access campaigns",
-      "lang": "en",
-      "standing": "rights",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "\"access to medicines\" campaign OR compulsory licence demand OR patent pool"
-    },
-    {
-      "label": "Patient harm groups",
-      "lang": "en",
-      "standing": "rights",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "harmed patients group OR implant campaigners OR medicine safety campaign"
-    },
-    {
-      "label": "Health data and privacy",
-      "lang": "en",
-      "standing": "rights",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "health data sharing objection OR patient records commercial deal"
-    },
-    {
-      "label": "Mental health prescribing",
-      "lang": "en",
-      "standing": "rights",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "antidepressant withdrawal guidance OR prescribed harm campaign"
-    },
-    {
-      "label": "Marketing and patient groups",
-      "lang": "en",
-      "standing": "rights",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "patient group industry funding OR awareness campaign pharmaceutical funded"
-    },
-    {
-      "label": "Global trials and exports",
-      "lang": "en",
-      "standing": "official",
-      "hl": "en-US",
-      "gl": "US",
-      "ceid": "US:en",
-      "query": "clinical trial low-income country OR export unapproved medicine investigation"
-    }
-  ]
+ "_note": [
+  "Sources for the medical wire.",
+  "",
+  "This is a feed on the conduct of the medical industries. It is not a source",
+  "of medical advice, and the gate refuses health-and-wellness coverage,",
+  "symptom explainers and individual patient stories for that reason.",
+  "",
+  "direct: feeds proven working in the sibling Welcome to Your Galaxy repos.",
+  "  Nothing invented — an untested feed URL reports itself unreachable on every",
+  "  harvest and quietly makes the coverage figure a lie.",
+  "",
+  "gnews: Google News locale searches; the harvester builds the URL from",
+  "  hl / gl / ceid. Twenty-four queries rotate across 46 locales.",
+  "",
+  "events: subject searches for regulators, inquiries and evidence reviews.",
+  "",
+  "standing is provenance, not importance:",
+  "  official  medicines regulators, courts, prosecutors, public inquiries",
+  "  research  journals, evidence reviews, payments and pricing research",
+  "  press     general news across the locales",
+  "  rights    patient, access and privacy organisations",
+  "",
+  "Worth adding, with URLs you have opened: the BMJ, The Lancet, Cochrane,",
+  "Health Action International, Medicines Law & Policy, No Free Lunch, AllTrials,",
+  "Public Citizen's Health Research Group, and national medicines regulators."
+ ],
+ "direct": [
+  {
+   "name": "World Health Organization",
+   "lang": "en",
+   "standing": "official",
+   "url": "https://www.who.int/rss-feeds/news-english.xml"
+  },
+  {
+   "name": "US Department of Justice",
+   "lang": "en",
+   "standing": "official",
+   "url": "https://www.justice.gov/feeds/opa/justice-news.xml"
+  },
+  {
+   "name": "European Commission",
+   "lang": "en",
+   "standing": "official",
+   "url": "https://ec.europa.eu/commission/presscorner/api/rss"
+  },
+  {
+   "name": "OHCHR — news",
+   "lang": "en",
+   "standing": "official",
+   "url": "https://www.ohchr.org/en/rss/news"
+  },
+  {
+   "name": "UN News — Human Rights",
+   "lang": "en",
+   "standing": "official",
+   "url": "https://news.un.org/feed/subscribe/en/news/topic/human-rights/feed/rss.xml"
+  },
+  {
+   "name": "OECD",
+   "lang": "en",
+   "standing": "official",
+   "url": "https://www.oecd.org/newsroom/index.xml"
+  },
+  {
+   "name": "World Bank",
+   "lang": "en",
+   "standing": "official",
+   "url": "https://www.worldbank.org/en/news/all?format=rss"
+  },
+  {
+   "name": "European Court of Human Rights",
+   "lang": "en",
+   "standing": "official",
+   "url": "https://www.echr.coe.int/rss"
+  },
+  {
+   "name": "Europol",
+   "lang": "en",
+   "standing": "official",
+   "url": "https://www.europol.europa.eu/rss.xml"
+  },
+  {
+   "name": "Business & Human Rights Resource Centre",
+   "lang": "en",
+   "standing": "research",
+   "url": "https://www.business-humanrights.org/en/rss/"
+  },
+  {
+   "name": "Transparency International",
+   "lang": "en",
+   "standing": "research",
+   "url": "https://www.transparency.org/en/rss"
+  },
+  {
+   "name": "Corporate Europe Observatory",
+   "lang": "en",
+   "standing": "research",
+   "url": "https://corporateeurope.org/en/rss.xml"
+  },
+  {
+   "name": "Bellingcat",
+   "lang": "en",
+   "standing": "research",
+   "url": "https://www.bellingcat.com/feed/"
+  },
+  {
+   "name": "ODI",
+   "lang": "en",
+   "standing": "research",
+   "url": "https://odi.org/en/feed/"
+  },
+  {
+   "name": "CEPR",
+   "lang": "en",
+   "standing": "research",
+   "url": "https://cepr.org/rss.xml"
+  },
+  {
+   "name": "Peterson Institute",
+   "lang": "en",
+   "standing": "research",
+   "url": "https://www.piie.com/rss.xml"
+  },
+  {
+   "name": "Tax Justice Network",
+   "lang": "en",
+   "standing": "research",
+   "url": "https://taxjustice.net/feed/"
+  },
+  {
+   "name": "Public Citizen · Global Trade Watch",
+   "lang": "en",
+   "standing": "rights",
+   "url": "https://www.citizen.org/feed/"
+  },
+  {
+   "name": "Human Rights Watch",
+   "lang": "en",
+   "standing": "rights",
+   "url": "https://www.hrw.org/rss/news"
+  },
+  {
+   "name": "Amnesty International",
+   "lang": "en",
+   "standing": "rights",
+   "url": "https://www.amnesty.org/en/rss/"
+  },
+  {
+   "name": "Privacy International",
+   "lang": "en",
+   "standing": "rights",
+   "url": "https://privacyinternational.org/rss.xml"
+  },
+  {
+   "name": "EDRi",
+   "lang": "en",
+   "standing": "rights",
+   "url": "https://edri.org/feed/"
+  },
+  {
+   "name": "Access Now",
+   "lang": "en",
+   "standing": "rights",
+   "url": "https://www.accessnow.org/feed/"
+  },
+  {
+   "name": "Statewatch",
+   "lang": "en",
+   "standing": "rights",
+   "url": "https://www.statewatch.org/rss/"
+  },
+  {
+   "name": "Article 19",
+   "lang": "en",
+   "standing": "rights",
+   "url": "https://www.article19.org/feed/"
+  },
+  {
+   "name": "Harm Reduction International",
+   "lang": "en",
+   "standing": "rights",
+   "url": "https://hri.global/feed/"
+  },
+  {
+   "name": "Global Witness",
+   "lang": "en",
+   "standing": "rights",
+   "url": "https://www.globalwitness.org/en/rss/"
+  },
+  {
+   "name": "The Intercept",
+   "lang": "en",
+   "standing": "press",
+   "url": "https://theintercept.com/feed/?rss"
+  },
+  {
+   "name": "The Marshall Project",
+   "lang": "en",
+   "standing": "press",
+   "url": "https://www.themarshallproject.org/rss/recent.rss"
+  }
+ ],
+ "gnews": [
+  {
+   "label": "English (US) · payments",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "theme": "payments",
+   "query": "\"payments to doctors\" OR \"Open Payments\" OR gifts from drug companies prescribing"
+  },
+  {
+   "label": "English (US) · prescribing",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "theme": "prescribing",
+   "query": "overprescribing OR \"inappropriate prescribing\" OR prescribing rates study"
+  },
+  {
+   "label": "English (US) · overdiagnosis",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "theme": "overdiagnosis",
+   "query": "overdiagnosis OR overtreatment OR \"disease mongering\""
+  },
+  {
+   "label": "English (US) · procedures",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "theme": "procedures",
+   "query": "\"unnecessary procedures\" OR \"low-value care\" OR unnecessary surgery"
+  },
+  {
+   "label": "English (US) · harm",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "theme": "harm",
+   "query": "adverse drug reaction deaths OR \"black box warning\" OR drug withdrawn safety"
+  },
+  {
+   "label": "English (US) · trials",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "theme": "trials",
+   "query": "\"clinical trial\" data withheld OR fabricated data trial OR retracted study medicine"
+  },
+  {
+   "label": "English (US) · capture",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "theme": "capture",
+   "query": "\"regulatory capture\" pharmaceutical OR \"revolving door\" FDA OR EMA industry"
+  },
+  {
+   "label": "English (US) · marketing",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "theme": "marketing",
+   "query": "\"off-label promotion\" OR misleading drug promotion OR sponsored medical education"
+  },
+  {
+   "label": "English (US) · contamination",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "theme": "contamination",
+   "query": "contaminated medicine OR falsified medicine OR \"infected blood\" inquiry"
+  },
+  {
+   "label": "English (US) · global",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "theme": "global",
+   "query": "unsafe drug exported OR substandard medicines low-income countries"
+  },
+  {
+   "label": "English (UK) · payments",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-GB",
+   "gl": "GB",
+   "ceid": "GB:en",
+   "theme": "payments",
+   "query": "\"payments to doctors\" OR \"Open Payments\" OR gifts from drug companies prescribing"
+  },
+  {
+   "label": "English (UK) · prescribing",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-GB",
+   "gl": "GB",
+   "ceid": "GB:en",
+   "theme": "prescribing",
+   "query": "overprescribing OR \"inappropriate prescribing\" OR prescribing rates study"
+  },
+  {
+   "label": "English (UK) · overdiagnosis",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-GB",
+   "gl": "GB",
+   "ceid": "GB:en",
+   "theme": "overdiagnosis",
+   "query": "overdiagnosis OR overtreatment OR \"disease mongering\""
+  },
+  {
+   "label": "English (UK) · procedures",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-GB",
+   "gl": "GB",
+   "ceid": "GB:en",
+   "theme": "procedures",
+   "query": "\"unnecessary procedures\" OR \"low-value care\" OR unnecessary surgery"
+  },
+  {
+   "label": "English (UK) · harm",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-GB",
+   "gl": "GB",
+   "ceid": "GB:en",
+   "theme": "harm",
+   "query": "adverse drug reaction deaths OR \"black box warning\" OR drug withdrawn safety"
+  },
+  {
+   "label": "English (UK) · trials",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-GB",
+   "gl": "GB",
+   "ceid": "GB:en",
+   "theme": "trials",
+   "query": "\"clinical trial\" data withheld OR fabricated data trial OR retracted study medicine"
+  },
+  {
+   "label": "English (UK) · capture",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-GB",
+   "gl": "GB",
+   "ceid": "GB:en",
+   "theme": "capture",
+   "query": "\"regulatory capture\" pharmaceutical OR \"revolving door\" FDA OR EMA industry"
+  },
+  {
+   "label": "English (UK) · marketing",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-GB",
+   "gl": "GB",
+   "ceid": "GB:en",
+   "theme": "marketing",
+   "query": "\"off-label promotion\" OR misleading drug promotion OR sponsored medical education"
+  },
+  {
+   "label": "English (UK) · contamination",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-GB",
+   "gl": "GB",
+   "ceid": "GB:en",
+   "theme": "contamination",
+   "query": "contaminated medicine OR falsified medicine OR \"infected blood\" inquiry"
+  },
+  {
+   "label": "English (UK) · global",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-GB",
+   "gl": "GB",
+   "ceid": "GB:en",
+   "theme": "global",
+   "query": "unsafe drug exported OR substandard medicines low-income countries"
+  },
+  {
+   "label": "English (India) · payments",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-IN",
+   "gl": "IN",
+   "ceid": "IN:en",
+   "theme": "payments",
+   "query": "\"payments to doctors\" OR \"Open Payments\" OR gifts from drug companies prescribing"
+  },
+  {
+   "label": "English (India) · prescribing",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-IN",
+   "gl": "IN",
+   "ceid": "IN:en",
+   "theme": "prescribing",
+   "query": "overprescribing OR \"inappropriate prescribing\" OR prescribing rates study"
+  },
+  {
+   "label": "English (India) · overdiagnosis",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-IN",
+   "gl": "IN",
+   "ceid": "IN:en",
+   "theme": "overdiagnosis",
+   "query": "overdiagnosis OR overtreatment OR \"disease mongering\""
+  },
+  {
+   "label": "English (India) · procedures",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-IN",
+   "gl": "IN",
+   "ceid": "IN:en",
+   "theme": "procedures",
+   "query": "\"unnecessary procedures\" OR \"low-value care\" OR unnecessary surgery"
+  },
+  {
+   "label": "English (India) · harm",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-IN",
+   "gl": "IN",
+   "ceid": "IN:en",
+   "theme": "harm",
+   "query": "adverse drug reaction deaths OR \"black box warning\" OR drug withdrawn safety"
+  },
+  {
+   "label": "English (India) · trials",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-IN",
+   "gl": "IN",
+   "ceid": "IN:en",
+   "theme": "trials",
+   "query": "\"clinical trial\" data withheld OR fabricated data trial OR retracted study medicine"
+  },
+  {
+   "label": "English (India) · capture",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-IN",
+   "gl": "IN",
+   "ceid": "IN:en",
+   "theme": "capture",
+   "query": "\"regulatory capture\" pharmaceutical OR \"revolving door\" FDA OR EMA industry"
+  },
+  {
+   "label": "English (India) · marketing",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-IN",
+   "gl": "IN",
+   "ceid": "IN:en",
+   "theme": "marketing",
+   "query": "\"off-label promotion\" OR misleading drug promotion OR sponsored medical education"
+  },
+  {
+   "label": "English (India) · contamination",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-IN",
+   "gl": "IN",
+   "ceid": "IN:en",
+   "theme": "contamination",
+   "query": "contaminated medicine OR falsified medicine OR \"infected blood\" inquiry"
+  },
+  {
+   "label": "English (India) · global",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-IN",
+   "gl": "IN",
+   "ceid": "IN:en",
+   "theme": "global",
+   "query": "unsafe drug exported OR substandard medicines low-income countries"
+  },
+  {
+   "label": "English (Nigeria) · payments",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-NG",
+   "gl": "NG",
+   "ceid": "NG:en",
+   "theme": "payments",
+   "query": "\"payments to doctors\" OR \"Open Payments\" OR gifts from drug companies prescribing"
+  },
+  {
+   "label": "English (Nigeria) · prescribing",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-NG",
+   "gl": "NG",
+   "ceid": "NG:en",
+   "theme": "prescribing",
+   "query": "overprescribing OR \"inappropriate prescribing\" OR prescribing rates study"
+  },
+  {
+   "label": "English (Nigeria) · overdiagnosis",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-NG",
+   "gl": "NG",
+   "ceid": "NG:en",
+   "theme": "overdiagnosis",
+   "query": "overdiagnosis OR overtreatment OR \"disease mongering\""
+  },
+  {
+   "label": "English (Nigeria) · procedures",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-NG",
+   "gl": "NG",
+   "ceid": "NG:en",
+   "theme": "procedures",
+   "query": "\"unnecessary procedures\" OR \"low-value care\" OR unnecessary surgery"
+  },
+  {
+   "label": "English (Nigeria) · harm",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-NG",
+   "gl": "NG",
+   "ceid": "NG:en",
+   "theme": "harm",
+   "query": "adverse drug reaction deaths OR \"black box warning\" OR drug withdrawn safety"
+  },
+  {
+   "label": "English (Nigeria) · trials",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-NG",
+   "gl": "NG",
+   "ceid": "NG:en",
+   "theme": "trials",
+   "query": "\"clinical trial\" data withheld OR fabricated data trial OR retracted study medicine"
+  },
+  {
+   "label": "English (Nigeria) · capture",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-NG",
+   "gl": "NG",
+   "ceid": "NG:en",
+   "theme": "capture",
+   "query": "\"regulatory capture\" pharmaceutical OR \"revolving door\" FDA OR EMA industry"
+  },
+  {
+   "label": "English (Nigeria) · marketing",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-NG",
+   "gl": "NG",
+   "ceid": "NG:en",
+   "theme": "marketing",
+   "query": "\"off-label promotion\" OR misleading drug promotion OR sponsored medical education"
+  },
+  {
+   "label": "English (Nigeria) · contamination",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-NG",
+   "gl": "NG",
+   "ceid": "NG:en",
+   "theme": "contamination",
+   "query": "contaminated medicine OR falsified medicine OR \"infected blood\" inquiry"
+  },
+  {
+   "label": "English (Nigeria) · global",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-NG",
+   "gl": "NG",
+   "ceid": "NG:en",
+   "theme": "global",
+   "query": "unsafe drug exported OR substandard medicines low-income countries"
+  },
+  {
+   "label": "English (Kenya) · payments",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-KE",
+   "gl": "KE",
+   "ceid": "KE:en",
+   "theme": "payments",
+   "query": "\"payments to doctors\" OR \"Open Payments\" OR gifts from drug companies prescribing"
+  },
+  {
+   "label": "English (Kenya) · prescribing",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-KE",
+   "gl": "KE",
+   "ceid": "KE:en",
+   "theme": "prescribing",
+   "query": "overprescribing OR \"inappropriate prescribing\" OR prescribing rates study"
+  },
+  {
+   "label": "English (Kenya) · overdiagnosis",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-KE",
+   "gl": "KE",
+   "ceid": "KE:en",
+   "theme": "overdiagnosis",
+   "query": "overdiagnosis OR overtreatment OR \"disease mongering\""
+  },
+  {
+   "label": "English (Kenya) · procedures",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-KE",
+   "gl": "KE",
+   "ceid": "KE:en",
+   "theme": "procedures",
+   "query": "\"unnecessary procedures\" OR \"low-value care\" OR unnecessary surgery"
+  },
+  {
+   "label": "English (Kenya) · harm",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-KE",
+   "gl": "KE",
+   "ceid": "KE:en",
+   "theme": "harm",
+   "query": "adverse drug reaction deaths OR \"black box warning\" OR drug withdrawn safety"
+  },
+  {
+   "label": "English (Kenya) · trials",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-KE",
+   "gl": "KE",
+   "ceid": "KE:en",
+   "theme": "trials",
+   "query": "\"clinical trial\" data withheld OR fabricated data trial OR retracted study medicine"
+  },
+  {
+   "label": "English (Kenya) · capture",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-KE",
+   "gl": "KE",
+   "ceid": "KE:en",
+   "theme": "capture",
+   "query": "\"regulatory capture\" pharmaceutical OR \"revolving door\" FDA OR EMA industry"
+  },
+  {
+   "label": "English (Kenya) · marketing",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-KE",
+   "gl": "KE",
+   "ceid": "KE:en",
+   "theme": "marketing",
+   "query": "\"off-label promotion\" OR misleading drug promotion OR sponsored medical education"
+  },
+  {
+   "label": "English (Kenya) · contamination",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-KE",
+   "gl": "KE",
+   "ceid": "KE:en",
+   "theme": "contamination",
+   "query": "contaminated medicine OR falsified medicine OR \"infected blood\" inquiry"
+  },
+  {
+   "label": "English (Kenya) · global",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-KE",
+   "gl": "KE",
+   "ceid": "KE:en",
+   "theme": "global",
+   "query": "unsafe drug exported OR substandard medicines low-income countries"
+  },
+  {
+   "label": "English (South Africa) · payments",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-ZA",
+   "gl": "ZA",
+   "ceid": "ZA:en",
+   "theme": "payments",
+   "query": "\"payments to doctors\" OR \"Open Payments\" OR gifts from drug companies prescribing"
+  },
+  {
+   "label": "English (South Africa) · prescribing",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-ZA",
+   "gl": "ZA",
+   "ceid": "ZA:en",
+   "theme": "prescribing",
+   "query": "overprescribing OR \"inappropriate prescribing\" OR prescribing rates study"
+  },
+  {
+   "label": "English (South Africa) · overdiagnosis",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-ZA",
+   "gl": "ZA",
+   "ceid": "ZA:en",
+   "theme": "overdiagnosis",
+   "query": "overdiagnosis OR overtreatment OR \"disease mongering\""
+  },
+  {
+   "label": "English (South Africa) · procedures",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-ZA",
+   "gl": "ZA",
+   "ceid": "ZA:en",
+   "theme": "procedures",
+   "query": "\"unnecessary procedures\" OR \"low-value care\" OR unnecessary surgery"
+  },
+  {
+   "label": "English (South Africa) · harm",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-ZA",
+   "gl": "ZA",
+   "ceid": "ZA:en",
+   "theme": "harm",
+   "query": "adverse drug reaction deaths OR \"black box warning\" OR drug withdrawn safety"
+  },
+  {
+   "label": "English (South Africa) · trials",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-ZA",
+   "gl": "ZA",
+   "ceid": "ZA:en",
+   "theme": "trials",
+   "query": "\"clinical trial\" data withheld OR fabricated data trial OR retracted study medicine"
+  },
+  {
+   "label": "English (South Africa) · capture",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-ZA",
+   "gl": "ZA",
+   "ceid": "ZA:en",
+   "theme": "capture",
+   "query": "\"regulatory capture\" pharmaceutical OR \"revolving door\" FDA OR EMA industry"
+  },
+  {
+   "label": "English (South Africa) · marketing",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-ZA",
+   "gl": "ZA",
+   "ceid": "ZA:en",
+   "theme": "marketing",
+   "query": "\"off-label promotion\" OR misleading drug promotion OR sponsored medical education"
+  },
+  {
+   "label": "English (South Africa) · contamination",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-ZA",
+   "gl": "ZA",
+   "ceid": "ZA:en",
+   "theme": "contamination",
+   "query": "contaminated medicine OR falsified medicine OR \"infected blood\" inquiry"
+  },
+  {
+   "label": "English (South Africa) · global",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-ZA",
+   "gl": "ZA",
+   "ceid": "ZA:en",
+   "theme": "global",
+   "query": "unsafe drug exported OR substandard medicines low-income countries"
+  },
+  {
+   "label": "English (Australia) · payments",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-AU",
+   "gl": "AU",
+   "ceid": "AU:en",
+   "theme": "payments",
+   "query": "\"payments to doctors\" OR \"Open Payments\" OR gifts from drug companies prescribing"
+  },
+  {
+   "label": "English (Australia) · prescribing",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-AU",
+   "gl": "AU",
+   "ceid": "AU:en",
+   "theme": "prescribing",
+   "query": "overprescribing OR \"inappropriate prescribing\" OR prescribing rates study"
+  },
+  {
+   "label": "English (Australia) · overdiagnosis",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-AU",
+   "gl": "AU",
+   "ceid": "AU:en",
+   "theme": "overdiagnosis",
+   "query": "overdiagnosis OR overtreatment OR \"disease mongering\""
+  },
+  {
+   "label": "English (Australia) · procedures",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-AU",
+   "gl": "AU",
+   "ceid": "AU:en",
+   "theme": "procedures",
+   "query": "\"unnecessary procedures\" OR \"low-value care\" OR unnecessary surgery"
+  },
+  {
+   "label": "English (Australia) · harm",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-AU",
+   "gl": "AU",
+   "ceid": "AU:en",
+   "theme": "harm",
+   "query": "adverse drug reaction deaths OR \"black box warning\" OR drug withdrawn safety"
+  },
+  {
+   "label": "English (Australia) · trials",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-AU",
+   "gl": "AU",
+   "ceid": "AU:en",
+   "theme": "trials",
+   "query": "\"clinical trial\" data withheld OR fabricated data trial OR retracted study medicine"
+  },
+  {
+   "label": "English (Australia) · capture",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-AU",
+   "gl": "AU",
+   "ceid": "AU:en",
+   "theme": "capture",
+   "query": "\"regulatory capture\" pharmaceutical OR \"revolving door\" FDA OR EMA industry"
+  },
+  {
+   "label": "English (Australia) · marketing",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-AU",
+   "gl": "AU",
+   "ceid": "AU:en",
+   "theme": "marketing",
+   "query": "\"off-label promotion\" OR misleading drug promotion OR sponsored medical education"
+  },
+  {
+   "label": "English (Australia) · contamination",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-AU",
+   "gl": "AU",
+   "ceid": "AU:en",
+   "theme": "contamination",
+   "query": "contaminated medicine OR falsified medicine OR \"infected blood\" inquiry"
+  },
+  {
+   "label": "English (Australia) · global",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-AU",
+   "gl": "AU",
+   "ceid": "AU:en",
+   "theme": "global",
+   "query": "unsafe drug exported OR substandard medicines low-income countries"
+  },
+  {
+   "label": "English (Canada) · payments",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-CA",
+   "gl": "CA",
+   "ceid": "CA:en",
+   "theme": "payments",
+   "query": "\"payments to doctors\" OR \"Open Payments\" OR gifts from drug companies prescribing"
+  },
+  {
+   "label": "English (Canada) · prescribing",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-CA",
+   "gl": "CA",
+   "ceid": "CA:en",
+   "theme": "prescribing",
+   "query": "overprescribing OR \"inappropriate prescribing\" OR prescribing rates study"
+  },
+  {
+   "label": "English (Canada) · overdiagnosis",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-CA",
+   "gl": "CA",
+   "ceid": "CA:en",
+   "theme": "overdiagnosis",
+   "query": "overdiagnosis OR overtreatment OR \"disease mongering\""
+  },
+  {
+   "label": "English (Canada) · procedures",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-CA",
+   "gl": "CA",
+   "ceid": "CA:en",
+   "theme": "procedures",
+   "query": "\"unnecessary procedures\" OR \"low-value care\" OR unnecessary surgery"
+  },
+  {
+   "label": "English (Canada) · harm",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-CA",
+   "gl": "CA",
+   "ceid": "CA:en",
+   "theme": "harm",
+   "query": "adverse drug reaction deaths OR \"black box warning\" OR drug withdrawn safety"
+  },
+  {
+   "label": "English (Canada) · trials",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-CA",
+   "gl": "CA",
+   "ceid": "CA:en",
+   "theme": "trials",
+   "query": "\"clinical trial\" data withheld OR fabricated data trial OR retracted study medicine"
+  },
+  {
+   "label": "English (Canada) · capture",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-CA",
+   "gl": "CA",
+   "ceid": "CA:en",
+   "theme": "capture",
+   "query": "\"regulatory capture\" pharmaceutical OR \"revolving door\" FDA OR EMA industry"
+  },
+  {
+   "label": "English (Canada) · marketing",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-CA",
+   "gl": "CA",
+   "ceid": "CA:en",
+   "theme": "marketing",
+   "query": "\"off-label promotion\" OR misleading drug promotion OR sponsored medical education"
+  },
+  {
+   "label": "English (Canada) · contamination",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-CA",
+   "gl": "CA",
+   "ceid": "CA:en",
+   "theme": "contamination",
+   "query": "contaminated medicine OR falsified medicine OR \"infected blood\" inquiry"
+  },
+  {
+   "label": "English (Canada) · global",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-CA",
+   "gl": "CA",
+   "ceid": "CA:en",
+   "theme": "global",
+   "query": "unsafe drug exported OR substandard medicines low-income countries"
+  },
+  {
+   "label": "Español (España) · payments",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es",
+   "gl": "ES",
+   "ceid": "ES:es",
+   "theme": "payments",
+   "query": "pagos de farmacéuticas a médicos OR obsequios de la industria a médicos OR transparencia sanitaria"
+  },
+  {
+   "label": "Español (España) · prescribing",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es",
+   "gl": "ES",
+   "ceid": "ES:es",
+   "theme": "prescribing",
+   "query": "sobreprescripción OR prescripción inadecuada OR recetas de antibióticos exceso"
+  },
+  {
+   "label": "Español (España) · overdiagnosis",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es",
+   "gl": "ES",
+   "ceid": "ES:es",
+   "theme": "overdiagnosis",
+   "query": "sobrediagnóstico OR sobretratamiento OR invención de enfermedades"
+  },
+  {
+   "label": "Español (España) · procedures",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es",
+   "gl": "ES",
+   "ceid": "ES:es",
+   "theme": "procedures",
+   "query": "cirugías innecesarias OR procedimientos innecesarios OR pruebas innecesarias"
+  },
+  {
+   "label": "Español (España) · harm",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es",
+   "gl": "ES",
+   "ceid": "ES:es",
+   "theme": "harm",
+   "query": "reacciones adversas a medicamentos muertes OR medicamento retirado seguridad"
+  },
+  {
+   "label": "Español (España) · trials",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es",
+   "gl": "ES",
+   "ceid": "ES:es",
+   "theme": "trials",
+   "query": "ensayo clínico datos ocultados OR estudio retractado OR datos falsificados"
+  },
+  {
+   "label": "Español (España) · capture",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es",
+   "gl": "ES",
+   "ceid": "ES:es",
+   "theme": "capture",
+   "query": "\"puertas giratorias\" agencia del medicamento OR captura del regulador farmacéutico"
+  },
+  {
+   "label": "Español (España) · marketing",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es",
+   "gl": "ES",
+   "ceid": "ES:es",
+   "theme": "marketing",
+   "query": "promoción ilegal de medicamentos OR publicidad engañosa de fármacos"
+  },
+  {
+   "label": "Español (España) · contamination",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es",
+   "gl": "ES",
+   "ceid": "ES:es",
+   "theme": "contamination",
+   "query": "medicamento contaminado OR medicamento falsificado OR sangre contaminada"
+  },
+  {
+   "label": "Español (España) · global",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es",
+   "gl": "ES",
+   "ceid": "ES:es",
+   "theme": "global",
+   "query": "medicamentos de baja calidad países pobres OR exportación de fármacos inseguros"
+  },
+  {
+   "label": "Español (México) · payments",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "MX",
+   "ceid": "MX:es-419",
+   "theme": "payments",
+   "query": "pagos de farmacéuticas a médicos OR obsequios de la industria a médicos OR transparencia sanitaria"
+  },
+  {
+   "label": "Español (México) · prescribing",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "MX",
+   "ceid": "MX:es-419",
+   "theme": "prescribing",
+   "query": "sobreprescripción OR prescripción inadecuada OR recetas de antibióticos exceso"
+  },
+  {
+   "label": "Español (México) · overdiagnosis",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "MX",
+   "ceid": "MX:es-419",
+   "theme": "overdiagnosis",
+   "query": "sobrediagnóstico OR sobretratamiento OR invención de enfermedades"
+  },
+  {
+   "label": "Español (México) · procedures",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "MX",
+   "ceid": "MX:es-419",
+   "theme": "procedures",
+   "query": "cirugías innecesarias OR procedimientos innecesarios OR pruebas innecesarias"
+  },
+  {
+   "label": "Español (México) · harm",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "MX",
+   "ceid": "MX:es-419",
+   "theme": "harm",
+   "query": "reacciones adversas a medicamentos muertes OR medicamento retirado seguridad"
+  },
+  {
+   "label": "Español (México) · trials",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "MX",
+   "ceid": "MX:es-419",
+   "theme": "trials",
+   "query": "ensayo clínico datos ocultados OR estudio retractado OR datos falsificados"
+  },
+  {
+   "label": "Español (México) · capture",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "MX",
+   "ceid": "MX:es-419",
+   "theme": "capture",
+   "query": "\"puertas giratorias\" agencia del medicamento OR captura del regulador farmacéutico"
+  },
+  {
+   "label": "Español (México) · marketing",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "MX",
+   "ceid": "MX:es-419",
+   "theme": "marketing",
+   "query": "promoción ilegal de medicamentos OR publicidad engañosa de fármacos"
+  },
+  {
+   "label": "Español (México) · contamination",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "MX",
+   "ceid": "MX:es-419",
+   "theme": "contamination",
+   "query": "medicamento contaminado OR medicamento falsificado OR sangre contaminada"
+  },
+  {
+   "label": "Español (México) · global",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "MX",
+   "ceid": "MX:es-419",
+   "theme": "global",
+   "query": "medicamentos de baja calidad países pobres OR exportación de fármacos inseguros"
+  },
+  {
+   "label": "Español (Argentina) · payments",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "AR",
+   "ceid": "AR:es-419",
+   "theme": "payments",
+   "query": "pagos de farmacéuticas a médicos OR obsequios de la industria a médicos OR transparencia sanitaria"
+  },
+  {
+   "label": "Español (Argentina) · prescribing",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "AR",
+   "ceid": "AR:es-419",
+   "theme": "prescribing",
+   "query": "sobreprescripción OR prescripción inadecuada OR recetas de antibióticos exceso"
+  },
+  {
+   "label": "Español (Argentina) · overdiagnosis",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "AR",
+   "ceid": "AR:es-419",
+   "theme": "overdiagnosis",
+   "query": "sobrediagnóstico OR sobretratamiento OR invención de enfermedades"
+  },
+  {
+   "label": "Español (Argentina) · procedures",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "AR",
+   "ceid": "AR:es-419",
+   "theme": "procedures",
+   "query": "cirugías innecesarias OR procedimientos innecesarios OR pruebas innecesarias"
+  },
+  {
+   "label": "Español (Argentina) · harm",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "AR",
+   "ceid": "AR:es-419",
+   "theme": "harm",
+   "query": "reacciones adversas a medicamentos muertes OR medicamento retirado seguridad"
+  },
+  {
+   "label": "Español (Argentina) · trials",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "AR",
+   "ceid": "AR:es-419",
+   "theme": "trials",
+   "query": "ensayo clínico datos ocultados OR estudio retractado OR datos falsificados"
+  },
+  {
+   "label": "Español (Argentina) · capture",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "AR",
+   "ceid": "AR:es-419",
+   "theme": "capture",
+   "query": "\"puertas giratorias\" agencia del medicamento OR captura del regulador farmacéutico"
+  },
+  {
+   "label": "Español (Argentina) · marketing",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "AR",
+   "ceid": "AR:es-419",
+   "theme": "marketing",
+   "query": "promoción ilegal de medicamentos OR publicidad engañosa de fármacos"
+  },
+  {
+   "label": "Español (Argentina) · contamination",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "AR",
+   "ceid": "AR:es-419",
+   "theme": "contamination",
+   "query": "medicamento contaminado OR medicamento falsificado OR sangre contaminada"
+  },
+  {
+   "label": "Español (Argentina) · global",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "AR",
+   "ceid": "AR:es-419",
+   "theme": "global",
+   "query": "medicamentos de baja calidad países pobres OR exportación de fármacos inseguros"
+  },
+  {
+   "label": "Español (Colombia) · payments",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "CO",
+   "ceid": "CO:es-419",
+   "theme": "payments",
+   "query": "pagos de farmacéuticas a médicos OR obsequios de la industria a médicos OR transparencia sanitaria"
+  },
+  {
+   "label": "Español (Colombia) · prescribing",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "CO",
+   "ceid": "CO:es-419",
+   "theme": "prescribing",
+   "query": "sobreprescripción OR prescripción inadecuada OR recetas de antibióticos exceso"
+  },
+  {
+   "label": "Español (Colombia) · overdiagnosis",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "CO",
+   "ceid": "CO:es-419",
+   "theme": "overdiagnosis",
+   "query": "sobrediagnóstico OR sobretratamiento OR invención de enfermedades"
+  },
+  {
+   "label": "Español (Colombia) · procedures",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "CO",
+   "ceid": "CO:es-419",
+   "theme": "procedures",
+   "query": "cirugías innecesarias OR procedimientos innecesarios OR pruebas innecesarias"
+  },
+  {
+   "label": "Español (Colombia) · harm",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "CO",
+   "ceid": "CO:es-419",
+   "theme": "harm",
+   "query": "reacciones adversas a medicamentos muertes OR medicamento retirado seguridad"
+  },
+  {
+   "label": "Español (Colombia) · trials",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "CO",
+   "ceid": "CO:es-419",
+   "theme": "trials",
+   "query": "ensayo clínico datos ocultados OR estudio retractado OR datos falsificados"
+  },
+  {
+   "label": "Español (Colombia) · capture",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "CO",
+   "ceid": "CO:es-419",
+   "theme": "capture",
+   "query": "\"puertas giratorias\" agencia del medicamento OR captura del regulador farmacéutico"
+  },
+  {
+   "label": "Español (Colombia) · marketing",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "CO",
+   "ceid": "CO:es-419",
+   "theme": "marketing",
+   "query": "promoción ilegal de medicamentos OR publicidad engañosa de fármacos"
+  },
+  {
+   "label": "Español (Colombia) · contamination",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "CO",
+   "ceid": "CO:es-419",
+   "theme": "contamination",
+   "query": "medicamento contaminado OR medicamento falsificado OR sangre contaminada"
+  },
+  {
+   "label": "Español (Colombia) · global",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es-419",
+   "gl": "CO",
+   "ceid": "CO:es-419",
+   "theme": "global",
+   "query": "medicamentos de baja calidad países pobres OR exportación de fármacos inseguros"
+  },
+  {
+   "label": "Português (Brasil) · payments",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-BR",
+   "gl": "BR",
+   "ceid": "BR:pt-419",
+   "theme": "payments",
+   "query": "pagamentos da indústria farmacêutica a médicos OR brindes a médicos prescrição"
+  },
+  {
+   "label": "Português (Brasil) · prescribing",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-BR",
+   "gl": "BR",
+   "ceid": "BR:pt-419",
+   "theme": "prescribing",
+   "query": "prescrição excessiva OR prescrição inadequada OR uso excessivo de antibióticos"
+  },
+  {
+   "label": "Português (Brasil) · overdiagnosis",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-BR",
+   "gl": "BR",
+   "ceid": "BR:pt-419",
+   "theme": "overdiagnosis",
+   "query": "sobrediagnóstico OR excesso de diagnóstico OR invenção de doenças"
+  },
+  {
+   "label": "Português (Brasil) · procedures",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-BR",
+   "gl": "BR",
+   "ceid": "BR:pt-419",
+   "theme": "procedures",
+   "query": "cirurgias desnecessárias OR exames desnecessários OR procedimentos desnecessários"
+  },
+  {
+   "label": "Português (Brasil) · harm",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-BR",
+   "gl": "BR",
+   "ceid": "BR:pt-419",
+   "theme": "harm",
+   "query": "reações adversas a medicamentos mortes OR medicamento retirado do mercado"
+  },
+  {
+   "label": "Português (Brasil) · trials",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-BR",
+   "gl": "BR",
+   "ceid": "BR:pt-419",
+   "theme": "trials",
+   "query": "ensaio clínico dados ocultados OR estudo retratado OR dados falsificados"
+  },
+  {
+   "label": "Português (Brasil) · capture",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-BR",
+   "gl": "BR",
+   "ceid": "BR:pt-419",
+   "theme": "capture",
+   "query": "\"porta giratória\" Anvisa OR captura regulatória farmacêutica"
+  },
+  {
+   "label": "Português (Brasil) · marketing",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-BR",
+   "gl": "BR",
+   "ceid": "BR:pt-419",
+   "theme": "marketing",
+   "query": "promoção irregular de medicamentos OR publicidade enganosa de remédios"
+  },
+  {
+   "label": "Português (Brasil) · contamination",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-BR",
+   "gl": "BR",
+   "ceid": "BR:pt-419",
+   "theme": "contamination",
+   "query": "medicamento contaminado OR medicamento falsificado OR sangue contaminado"
+  },
+  {
+   "label": "Português (Brasil) · global",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-BR",
+   "gl": "BR",
+   "ceid": "BR:pt-419",
+   "theme": "global",
+   "query": "medicamentos de má qualidade países pobres OR exportação de remédios inseguros"
+  },
+  {
+   "label": "Português (Portugal) · payments",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-PT",
+   "gl": "PT",
+   "ceid": "PT:pt-150",
+   "theme": "payments",
+   "query": "pagamentos da indústria farmacêutica a médicos OR brindes a médicos prescrição"
+  },
+  {
+   "label": "Português (Portugal) · prescribing",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-PT",
+   "gl": "PT",
+   "ceid": "PT:pt-150",
+   "theme": "prescribing",
+   "query": "prescrição excessiva OR prescrição inadequada OR uso excessivo de antibióticos"
+  },
+  {
+   "label": "Português (Portugal) · overdiagnosis",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-PT",
+   "gl": "PT",
+   "ceid": "PT:pt-150",
+   "theme": "overdiagnosis",
+   "query": "sobrediagnóstico OR excesso de diagnóstico OR invenção de doenças"
+  },
+  {
+   "label": "Português (Portugal) · procedures",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-PT",
+   "gl": "PT",
+   "ceid": "PT:pt-150",
+   "theme": "procedures",
+   "query": "cirurgias desnecessárias OR exames desnecessários OR procedimentos desnecessários"
+  },
+  {
+   "label": "Português (Portugal) · harm",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-PT",
+   "gl": "PT",
+   "ceid": "PT:pt-150",
+   "theme": "harm",
+   "query": "reações adversas a medicamentos mortes OR medicamento retirado do mercado"
+  },
+  {
+   "label": "Português (Portugal) · trials",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-PT",
+   "gl": "PT",
+   "ceid": "PT:pt-150",
+   "theme": "trials",
+   "query": "ensaio clínico dados ocultados OR estudo retratado OR dados falsificados"
+  },
+  {
+   "label": "Português (Portugal) · capture",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-PT",
+   "gl": "PT",
+   "ceid": "PT:pt-150",
+   "theme": "capture",
+   "query": "\"porta giratória\" Anvisa OR captura regulatória farmacêutica"
+  },
+  {
+   "label": "Português (Portugal) · marketing",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-PT",
+   "gl": "PT",
+   "ceid": "PT:pt-150",
+   "theme": "marketing",
+   "query": "promoção irregular de medicamentos OR publicidade enganosa de remédios"
+  },
+  {
+   "label": "Português (Portugal) · contamination",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-PT",
+   "gl": "PT",
+   "ceid": "PT:pt-150",
+   "theme": "contamination",
+   "query": "medicamento contaminado OR medicamento falsificado OR sangue contaminado"
+  },
+  {
+   "label": "Português (Portugal) · global",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-PT",
+   "gl": "PT",
+   "ceid": "PT:pt-150",
+   "theme": "global",
+   "query": "medicamentos de má qualidade países pobres OR exportação de remédios inseguros"
+  },
+  {
+   "label": "Français (France) · payments",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "FR",
+   "ceid": "FR:fr",
+   "theme": "payments",
+   "query": "liens d'intérêts médecins laboratoires OR cadeaux des laboratoires aux médecins OR base Transparence Santé"
+  },
+  {
+   "label": "Français (France) · prescribing",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "FR",
+   "ceid": "FR:fr",
+   "theme": "prescribing",
+   "query": "surprescription OR prescription inappropriée OR mésusage des antibiotiques"
+  },
+  {
+   "label": "Français (France) · overdiagnosis",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "FR",
+   "ceid": "FR:fr",
+   "theme": "overdiagnosis",
+   "query": "surdiagnostic OR surtraitement OR \"façonnage de maladies\""
+  },
+  {
+   "label": "Français (France) · procedures",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "FR",
+   "ceid": "FR:fr",
+   "theme": "procedures",
+   "query": "actes inutiles OR chirurgie non justifiée OR examens non pertinents"
+  },
+  {
+   "label": "Français (France) · harm",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "FR",
+   "ceid": "FR:fr",
+   "theme": "harm",
+   "query": "effets indésirables médicaments décès OR médicament retiré du marché"
+  },
+  {
+   "label": "Français (France) · trials",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "FR",
+   "ceid": "FR:fr",
+   "theme": "trials",
+   "query": "essai clinique données dissimulées OR étude rétractée OR données falsifiées"
+  },
+  {
+   "label": "Français (France) · capture",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "FR",
+   "ceid": "FR:fr",
+   "theme": "capture",
+   "query": "\"pantouflage\" agence du médicament OR conflits d'intérêts ANSM"
+  },
+  {
+   "label": "Français (France) · marketing",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "FR",
+   "ceid": "FR:fr",
+   "theme": "marketing",
+   "query": "promotion hors AMM OR publicité trompeuse médicament"
+  },
+  {
+   "label": "Français (France) · contamination",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "FR",
+   "ceid": "FR:fr",
+   "theme": "contamination",
+   "query": "médicament contaminé OR médicament falsifié OR sang contaminé"
+  },
+  {
+   "label": "Français (France) · global",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "FR",
+   "ceid": "FR:fr",
+   "theme": "global",
+   "query": "médicaments de qualité inférieure pays pauvres OR exportation de médicaments dangereux"
+  },
+  {
+   "label": "Français (Canada) · payments",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "CA",
+   "ceid": "CA:fr",
+   "theme": "payments",
+   "query": "liens d'intérêts médecins laboratoires OR cadeaux des laboratoires aux médecins OR base Transparence Santé"
+  },
+  {
+   "label": "Français (Canada) · prescribing",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "CA",
+   "ceid": "CA:fr",
+   "theme": "prescribing",
+   "query": "surprescription OR prescription inappropriée OR mésusage des antibiotiques"
+  },
+  {
+   "label": "Français (Canada) · overdiagnosis",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "CA",
+   "ceid": "CA:fr",
+   "theme": "overdiagnosis",
+   "query": "surdiagnostic OR surtraitement OR \"façonnage de maladies\""
+  },
+  {
+   "label": "Français (Canada) · procedures",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "CA",
+   "ceid": "CA:fr",
+   "theme": "procedures",
+   "query": "actes inutiles OR chirurgie non justifiée OR examens non pertinents"
+  },
+  {
+   "label": "Français (Canada) · harm",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "CA",
+   "ceid": "CA:fr",
+   "theme": "harm",
+   "query": "effets indésirables médicaments décès OR médicament retiré du marché"
+  },
+  {
+   "label": "Français (Canada) · trials",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "CA",
+   "ceid": "CA:fr",
+   "theme": "trials",
+   "query": "essai clinique données dissimulées OR étude rétractée OR données falsifiées"
+  },
+  {
+   "label": "Français (Canada) · capture",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "CA",
+   "ceid": "CA:fr",
+   "theme": "capture",
+   "query": "\"pantouflage\" agence du médicament OR conflits d'intérêts ANSM"
+  },
+  {
+   "label": "Français (Canada) · marketing",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "CA",
+   "ceid": "CA:fr",
+   "theme": "marketing",
+   "query": "promotion hors AMM OR publicité trompeuse médicament"
+  },
+  {
+   "label": "Français (Canada) · contamination",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "CA",
+   "ceid": "CA:fr",
+   "theme": "contamination",
+   "query": "médicament contaminé OR médicament falsifié OR sang contaminé"
+  },
+  {
+   "label": "Français (Canada) · global",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "CA",
+   "ceid": "CA:fr",
+   "theme": "global",
+   "query": "médicaments de qualité inférieure pays pauvres OR exportation de médicaments dangereux"
+  },
+  {
+   "label": "Deutsch (Deutschland) · payments",
+   "lang": "de",
+   "standing": "press",
+   "hl": "de",
+   "gl": "DE",
+   "ceid": "DE:de",
+   "theme": "payments",
+   "query": "Zahlungen der Pharmaindustrie an Ärzte OR Transparenzkodex Ärzte Honorare"
+  },
+  {
+   "label": "Deutsch (Deutschland) · prescribing",
+   "lang": "de",
+   "standing": "press",
+   "hl": "de",
+   "gl": "DE",
+   "ceid": "DE:de",
+   "theme": "prescribing",
+   "query": "Überverordnung OR unangemessene Verordnung OR Antibiotika zu häufig verschrieben"
+  },
+  {
+   "label": "Deutsch (Deutschland) · overdiagnosis",
+   "lang": "de",
+   "standing": "press",
+   "hl": "de",
+   "gl": "DE",
+   "ceid": "DE:de",
+   "theme": "overdiagnosis",
+   "query": "Überdiagnose OR Übertherapie OR \"Krankheitserfindung\""
+  },
+  {
+   "label": "Deutsch (Deutschland) · procedures",
+   "lang": "de",
+   "standing": "press",
+   "hl": "de",
+   "gl": "DE",
+   "ceid": "DE:de",
+   "theme": "procedures",
+   "query": "unnötige Operationen OR unnötige Untersuchungen OR nicht indizierte Eingriffe"
+  },
+  {
+   "label": "Deutsch (Deutschland) · harm",
+   "lang": "de",
+   "standing": "press",
+   "hl": "de",
+   "gl": "DE",
+   "ceid": "DE:de",
+   "theme": "harm",
+   "query": "Nebenwirkungen Todesfälle Arzneimittel OR Medikament vom Markt genommen"
+  },
+  {
+   "label": "Deutsch (Deutschland) · trials",
+   "lang": "de",
+   "standing": "press",
+   "hl": "de",
+   "gl": "DE",
+   "ceid": "DE:de",
+   "theme": "trials",
+   "query": "Studiendaten zurückgehalten OR zurückgezogene Studie OR gefälschte Daten"
+  },
+  {
+   "label": "Deutsch (Deutschland) · capture",
+   "lang": "de",
+   "standing": "press",
+   "hl": "de",
+   "gl": "DE",
+   "ceid": "DE:de",
+   "theme": "capture",
+   "query": "Drehtür Arzneimittelbehörde OR Interessenkonflikte BfArM EMA"
+  },
+  {
+   "label": "Deutsch (Deutschland) · marketing",
+   "lang": "de",
+   "standing": "press",
+   "hl": "de",
+   "gl": "DE",
+   "ceid": "DE:de",
+   "theme": "marketing",
+   "query": "Off-Label-Werbung OR irreführende Arzneimittelwerbung"
+  },
+  {
+   "label": "Deutsch (Deutschland) · contamination",
+   "lang": "de",
+   "standing": "press",
+   "hl": "de",
+   "gl": "DE",
+   "ceid": "DE:de",
+   "theme": "contamination",
+   "query": "verunreinigtes Arzneimittel OR gefälschte Medikamente OR Blutskandal"
+  },
+  {
+   "label": "Deutsch (Deutschland) · global",
+   "lang": "de",
+   "standing": "press",
+   "hl": "de",
+   "gl": "DE",
+   "ceid": "DE:de",
+   "theme": "global",
+   "query": "minderwertige Medikamente arme Länder OR Export unsicherer Arzneimittel"
+  },
+  {
+   "label": "Deutsch (Österreich) · payments",
+   "lang": "de",
+   "standing": "press",
+   "hl": "de",
+   "gl": "AT",
+   "ceid": "AT:de",
+   "theme": "payments",
+   "query": "Zahlungen der Pharmaindustrie an Ärzte OR Transparenzkodex Ärzte Honorare"
+  },
+  {
+   "label": "Deutsch (Österreich) · prescribing",
+   "lang": "de",
+   "standing": "press",
+   "hl": "de",
+   "gl": "AT",
+   "ceid": "AT:de",
+   "theme": "prescribing",
+   "query": "Überverordnung OR unangemessene Verordnung OR Antibiotika zu häufig verschrieben"
+  },
+  {
+   "label": "Deutsch (Österreich) · overdiagnosis",
+   "lang": "de",
+   "standing": "press",
+   "hl": "de",
+   "gl": "AT",
+   "ceid": "AT:de",
+   "theme": "overdiagnosis",
+   "query": "Überdiagnose OR Übertherapie OR \"Krankheitserfindung\""
+  },
+  {
+   "label": "Deutsch (Österreich) · procedures",
+   "lang": "de",
+   "standing": "press",
+   "hl": "de",
+   "gl": "AT",
+   "ceid": "AT:de",
+   "theme": "procedures",
+   "query": "unnötige Operationen OR unnötige Untersuchungen OR nicht indizierte Eingriffe"
+  },
+  {
+   "label": "Deutsch (Österreich) · harm",
+   "lang": "de",
+   "standing": "press",
+   "hl": "de",
+   "gl": "AT",
+   "ceid": "AT:de",
+   "theme": "harm",
+   "query": "Nebenwirkungen Todesfälle Arzneimittel OR Medikament vom Markt genommen"
+  },
+  {
+   "label": "Deutsch (Österreich) · trials",
+   "lang": "de",
+   "standing": "press",
+   "hl": "de",
+   "gl": "AT",
+   "ceid": "AT:de",
+   "theme": "trials",
+   "query": "Studiendaten zurückgehalten OR zurückgezogene Studie OR gefälschte Daten"
+  },
+  {
+   "label": "Deutsch (Österreich) · capture",
+   "lang": "de",
+   "standing": "press",
+   "hl": "de",
+   "gl": "AT",
+   "ceid": "AT:de",
+   "theme": "capture",
+   "query": "Drehtür Arzneimittelbehörde OR Interessenkonflikte BfArM EMA"
+  },
+  {
+   "label": "Deutsch (Österreich) · marketing",
+   "lang": "de",
+   "standing": "press",
+   "hl": "de",
+   "gl": "AT",
+   "ceid": "AT:de",
+   "theme": "marketing",
+   "query": "Off-Label-Werbung OR irreführende Arzneimittelwerbung"
+  },
+  {
+   "label": "Deutsch (Österreich) · contamination",
+   "lang": "de",
+   "standing": "press",
+   "hl": "de",
+   "gl": "AT",
+   "ceid": "AT:de",
+   "theme": "contamination",
+   "query": "verunreinigtes Arzneimittel OR gefälschte Medikamente OR Blutskandal"
+  },
+  {
+   "label": "Deutsch (Österreich) · global",
+   "lang": "de",
+   "standing": "press",
+   "hl": "de",
+   "gl": "AT",
+   "ceid": "AT:de",
+   "theme": "global",
+   "query": "minderwertige Medikamente arme Länder OR Export unsicherer Arzneimittel"
+  },
+  {
+   "label": "Italiano · payments",
+   "lang": "it",
+   "standing": "press",
+   "hl": "it",
+   "gl": "IT",
+   "ceid": "IT:it",
+   "theme": "payments",
+   "query": "pagamenti delle case farmaceutiche ai medici OR trasparenza compensi medici"
+  },
+  {
+   "label": "Italiano · prescribing",
+   "lang": "it",
+   "standing": "press",
+   "hl": "it",
+   "gl": "IT",
+   "ceid": "IT:it",
+   "theme": "prescribing",
+   "query": "iperprescrizione OR prescrizione inappropriata OR antibiotici prescritti in eccesso"
+  },
+  {
+   "label": "Italiano · overdiagnosis",
+   "lang": "it",
+   "standing": "press",
+   "hl": "it",
+   "gl": "IT",
+   "ceid": "IT:it",
+   "theme": "overdiagnosis",
+   "query": "sovradiagnosi OR sovratrattamento OR \"invenzione di malattie\""
+  },
+  {
+   "label": "Italiano · procedures",
+   "lang": "it",
+   "standing": "press",
+   "hl": "it",
+   "gl": "IT",
+   "ceid": "IT:it",
+   "theme": "procedures",
+   "query": "interventi inutili OR esami inutili OR prestazioni inappropriate"
+  },
+  {
+   "label": "Italiano · harm",
+   "lang": "it",
+   "standing": "press",
+   "hl": "it",
+   "gl": "IT",
+   "ceid": "IT:it",
+   "theme": "harm",
+   "query": "reazioni avverse farmaci decessi OR farmaco ritirato sicurezza"
+  },
+  {
+   "label": "Italiano · trials",
+   "lang": "it",
+   "standing": "press",
+   "hl": "it",
+   "gl": "IT",
+   "ceid": "IT:it",
+   "theme": "trials",
+   "query": "dati sperimentazione nascosti OR studio ritrattato OR dati falsificati"
+  },
+  {
+   "label": "Italiano · capture",
+   "lang": "it",
+   "standing": "press",
+   "hl": "it",
+   "gl": "IT",
+   "ceid": "IT:it",
+   "theme": "capture",
+   "query": "porte girevoli AIFA OR conflitti di interesse agenzia del farmaco"
+  },
+  {
+   "label": "Italiano · marketing",
+   "lang": "it",
+   "standing": "press",
+   "hl": "it",
+   "gl": "IT",
+   "ceid": "IT:it",
+   "theme": "marketing",
+   "query": "promozione off-label OR pubblicità ingannevole farmaci"
+  },
+  {
+   "label": "Italiano · contamination",
+   "lang": "it",
+   "standing": "press",
+   "hl": "it",
+   "gl": "IT",
+   "ceid": "IT:it",
+   "theme": "contamination",
+   "query": "farmaco contaminato OR farmaci contraffatti OR sangue infetto"
+  },
+  {
+   "label": "Italiano · global",
+   "lang": "it",
+   "standing": "press",
+   "hl": "it",
+   "gl": "IT",
+   "ceid": "IT:it",
+   "theme": "global",
+   "query": "farmaci scadenti paesi poveri OR esportazione di farmaci non sicuri"
+  },
+  {
+   "label": "Nederlands · payments",
+   "lang": "nl",
+   "standing": "press",
+   "hl": "nl",
+   "gl": "NL",
+   "ceid": "NL:nl",
+   "theme": "payments",
+   "query": "betalingen farmaceuten aan artsen OR Transparantieregister Zorg"
+  },
+  {
+   "label": "Nederlands · prescribing",
+   "lang": "nl",
+   "standing": "press",
+   "hl": "nl",
+   "gl": "NL",
+   "ceid": "NL:nl",
+   "theme": "prescribing",
+   "query": "overbehandeling voorschrijven OR onnodige medicatie OR antibiotica te vaak voorgeschreven"
+  },
+  {
+   "label": "Nederlands · overdiagnosis",
+   "lang": "nl",
+   "standing": "press",
+   "hl": "nl",
+   "gl": "NL",
+   "ceid": "NL:nl",
+   "theme": "overdiagnosis",
+   "query": "overdiagnose OR overbehandeling OR ziektes verzinnen"
+  },
+  {
+   "label": "Nederlands · procedures",
+   "lang": "nl",
+   "standing": "press",
+   "hl": "nl",
+   "gl": "NL",
+   "ceid": "NL:nl",
+   "theme": "procedures",
+   "query": "onnodige operaties OR onnodige onderzoeken"
+  },
+  {
+   "label": "Nederlands · harm",
+   "lang": "nl",
+   "standing": "press",
+   "hl": "nl",
+   "gl": "NL",
+   "ceid": "NL:nl",
+   "theme": "harm",
+   "query": "bijwerkingen medicijnen doden OR medicijn van de markt gehaald"
+  },
+  {
+   "label": "Nederlands · trials",
+   "lang": "nl",
+   "standing": "press",
+   "hl": "nl",
+   "gl": "NL",
+   "ceid": "NL:nl",
+   "theme": "trials",
+   "query": "onderzoeksgegevens achtergehouden OR ingetrokken studie OR vervalste data"
+  },
+  {
+   "label": "Nederlands · capture",
+   "lang": "nl",
+   "standing": "press",
+   "hl": "nl",
+   "gl": "NL",
+   "ceid": "NL:nl",
+   "theme": "capture",
+   "query": "draaideur geneesmiddelenautoriteit OR belangenverstrengeling CBG EMA"
+  },
+  {
+   "label": "Nederlands · marketing",
+   "lang": "nl",
+   "standing": "press",
+   "hl": "nl",
+   "gl": "NL",
+   "ceid": "NL:nl",
+   "theme": "marketing",
+   "query": "off-label promotie OR misleidende medicijnreclame"
+  },
+  {
+   "label": "Nederlands · contamination",
+   "lang": "nl",
+   "standing": "press",
+   "hl": "nl",
+   "gl": "NL",
+   "ceid": "NL:nl",
+   "theme": "contamination",
+   "query": "besmet medicijn OR vervalste medicijnen OR besmet bloed"
+  },
+  {
+   "label": "Polski · payments",
+   "lang": "pl",
+   "standing": "press",
+   "hl": "pl",
+   "gl": "PL",
+   "ceid": "PL:pl",
+   "theme": "payments",
+   "query": "płatności firm farmaceutycznych dla lekarzy OR prezenty od koncernów lekarze"
+  },
+  {
+   "label": "Polski · prescribing",
+   "lang": "pl",
+   "standing": "press",
+   "hl": "pl",
+   "gl": "PL",
+   "ceid": "PL:pl",
+   "theme": "prescribing",
+   "query": "nadmierne przepisywanie leków OR niewłaściwa ordynacja OR antybiotyki przepisywane za często"
+  },
+  {
+   "label": "Polski · overdiagnosis",
+   "lang": "pl",
+   "standing": "press",
+   "hl": "pl",
+   "gl": "PL",
+   "ceid": "PL:pl",
+   "theme": "overdiagnosis",
+   "query": "naddiagnostyka OR nadmierne leczenie OR wymyślanie chorób"
+  },
+  {
+   "label": "Polski · procedures",
+   "lang": "pl",
+   "standing": "press",
+   "hl": "pl",
+   "gl": "PL",
+   "ceid": "PL:pl",
+   "theme": "procedures",
+   "query": "niepotrzebne operacje OR niepotrzebne badania"
+  },
+  {
+   "label": "Polski · harm",
+   "lang": "pl",
+   "standing": "press",
+   "hl": "pl",
+   "gl": "PL",
+   "ceid": "PL:pl",
+   "theme": "harm",
+   "query": "działania niepożądane leków zgony OR lek wycofany"
+  },
+  {
+   "label": "Polski · trials",
+   "lang": "pl",
+   "standing": "press",
+   "hl": "pl",
+   "gl": "PL",
+   "ceid": "PL:pl",
+   "theme": "trials",
+   "query": "dane z badań ukryte OR wycofane badanie OR sfałszowane dane"
+  },
+  {
+   "label": "Polski · capture",
+   "lang": "pl",
+   "standing": "press",
+   "hl": "pl",
+   "gl": "PL",
+   "ceid": "PL:pl",
+   "theme": "capture",
+   "query": "drzwi obrotowe urząd rejestracji leków OR konflikt interesów agencja leków"
+  },
+  {
+   "label": "Polski · marketing",
+   "lang": "pl",
+   "standing": "press",
+   "hl": "pl",
+   "gl": "PL",
+   "ceid": "PL:pl",
+   "theme": "marketing",
+   "query": "promocja poza wskazaniami OR wprowadzająca w błąd reklama leków"
+  },
+  {
+   "label": "Polski · contamination",
+   "lang": "pl",
+   "standing": "press",
+   "hl": "pl",
+   "gl": "PL",
+   "ceid": "PL:pl",
+   "theme": "contamination",
+   "query": "skażony lek OR podrobione leki OR zakażona krew"
+  },
+  {
+   "label": "Русский · payments",
+   "lang": "ru",
+   "standing": "press",
+   "hl": "ru",
+   "gl": "RU",
+   "ceid": "RU:ru",
+   "theme": "payments",
+   "query": "выплаты фармкомпаний врачам OR подарки врачам от фармкомпаний"
+  },
+  {
+   "label": "Русский · prescribing",
+   "lang": "ru",
+   "standing": "press",
+   "hl": "ru",
+   "gl": "RU",
+   "ceid": "RU:ru",
+   "theme": "prescribing",
+   "query": "избыточное назначение лекарств OR необоснованные назначения антибиотиков"
+  },
+  {
+   "label": "Русский · overdiagnosis",
+   "lang": "ru",
+   "standing": "press",
+   "hl": "ru",
+   "gl": "RU",
+   "ceid": "RU:ru",
+   "theme": "overdiagnosis",
+   "query": "гипердиагностика OR избыточное лечение OR изобретение болезней"
+  },
+  {
+   "label": "Русский · procedures",
+   "lang": "ru",
+   "standing": "press",
+   "hl": "ru",
+   "gl": "RU",
+   "ceid": "RU:ru",
+   "theme": "procedures",
+   "query": "ненужные операции OR ненужные обследования"
+  },
+  {
+   "label": "Русский · harm",
+   "lang": "ru",
+   "standing": "press",
+   "hl": "ru",
+   "gl": "RU",
+   "ceid": "RU:ru",
+   "theme": "harm",
+   "query": "побочные эффекты лекарств смерти OR препарат отозван"
+  },
+  {
+   "label": "Русский · trials",
+   "lang": "ru",
+   "standing": "press",
+   "hl": "ru",
+   "gl": "RU",
+   "ceid": "RU:ru",
+   "theme": "trials",
+   "query": "данные исследования скрыты OR отозванное исследование OR фальсифицированные данные"
+  },
+  {
+   "label": "Русский · capture",
+   "lang": "ru",
+   "standing": "press",
+   "hl": "ru",
+   "gl": "RU",
+   "ceid": "RU:ru",
+   "theme": "capture",
+   "query": "вращающаяся дверь регулятор лекарств OR конфликт интересов Минздрав"
+  },
+  {
+   "label": "Русский · marketing",
+   "lang": "ru",
+   "standing": "press",
+   "hl": "ru",
+   "gl": "RU",
+   "ceid": "RU:ru",
+   "theme": "marketing",
+   "query": "продвижение вне показаний OR недостоверная реклама лекарств"
+  },
+  {
+   "label": "Русский · contamination",
+   "lang": "ru",
+   "standing": "press",
+   "hl": "ru",
+   "gl": "RU",
+   "ceid": "RU:ru",
+   "theme": "contamination",
+   "query": "загрязнённый препарат OR фальсифицированные лекарства OR заражённая кровь"
+  },
+  {
+   "label": "Українська · payments",
+   "lang": "uk",
+   "standing": "press",
+   "hl": "uk",
+   "gl": "UA",
+   "ceid": "UA:uk",
+   "theme": "payments",
+   "query": "виплати фармкомпаній лікарям OR подарунки лікарям від фармкомпаній"
+  },
+  {
+   "label": "Українська · prescribing",
+   "lang": "uk",
+   "standing": "press",
+   "hl": "uk",
+   "gl": "UA",
+   "ceid": "UA:uk",
+   "theme": "prescribing",
+   "query": "надмірне призначення ліків OR необґрунтовані призначення антибіотиків"
+  },
+  {
+   "label": "Українська · overdiagnosis",
+   "lang": "uk",
+   "standing": "press",
+   "hl": "uk",
+   "gl": "UA",
+   "ceid": "UA:uk",
+   "theme": "overdiagnosis",
+   "query": "гіпердіагностика OR надмірне лікування"
+  },
+  {
+   "label": "Українська · harm",
+   "lang": "uk",
+   "standing": "press",
+   "hl": "uk",
+   "gl": "UA",
+   "ceid": "UA:uk",
+   "theme": "harm",
+   "query": "побічні дії ліків смерті OR препарат відкликано"
+  },
+  {
+   "label": "Українська · contamination",
+   "lang": "uk",
+   "standing": "press",
+   "hl": "uk",
+   "gl": "UA",
+   "ceid": "UA:uk",
+   "theme": "contamination",
+   "query": "фальсифіковані ліки OR забруднений препарат"
+  },
+  {
+   "label": "Türkçe · payments",
+   "lang": "tr",
+   "standing": "press",
+   "hl": "tr",
+   "gl": "TR",
+   "ceid": "TR:tr",
+   "theme": "payments",
+   "query": "ilaç firmalarından doktorlara ödemeler OR hekimlere hediye ilaç şirketi"
+  },
+  {
+   "label": "Türkçe · prescribing",
+   "lang": "tr",
+   "standing": "press",
+   "hl": "tr",
+   "gl": "TR",
+   "ceid": "TR:tr",
+   "theme": "prescribing",
+   "query": "aşırı reçete OR uygunsuz reçete OR antibiyotik fazla yazılıyor"
+  },
+  {
+   "label": "Türkçe · overdiagnosis",
+   "lang": "tr",
+   "standing": "press",
+   "hl": "tr",
+   "gl": "TR",
+   "ceid": "TR:tr",
+   "theme": "overdiagnosis",
+   "query": "aşırı tanı OR aşırı tedavi OR hastalık icadı"
+  },
+  {
+   "label": "Türkçe · procedures",
+   "lang": "tr",
+   "standing": "press",
+   "hl": "tr",
+   "gl": "TR",
+   "ceid": "TR:tr",
+   "theme": "procedures",
+   "query": "gereksiz ameliyat OR gereksiz tetkik"
+  },
+  {
+   "label": "Türkçe · harm",
+   "lang": "tr",
+   "standing": "press",
+   "hl": "tr",
+   "gl": "TR",
+   "ceid": "TR:tr",
+   "theme": "harm",
+   "query": "ilaç yan etkisi ölüm OR ilaç piyasadan çekildi"
+  },
+  {
+   "label": "Türkçe · trials",
+   "lang": "tr",
+   "standing": "press",
+   "hl": "tr",
+   "gl": "TR",
+   "ceid": "TR:tr",
+   "theme": "trials",
+   "query": "çalışma verileri gizlendi OR geri çekilen çalışma OR veri sahteciliği"
+  },
+  {
+   "label": "Türkçe · capture",
+   "lang": "tr",
+   "standing": "press",
+   "hl": "tr",
+   "gl": "TR",
+   "ceid": "TR:tr",
+   "theme": "capture",
+   "query": "döner kapı ilaç kurumu OR çıkar çatışması Türkiye İlaç Kurumu"
+  },
+  {
+   "label": "Türkçe · contamination",
+   "lang": "tr",
+   "standing": "press",
+   "hl": "tr",
+   "gl": "TR",
+   "ceid": "TR:tr",
+   "theme": "contamination",
+   "query": "kontamine ilaç OR sahte ilaç OR kirli kan"
+  },
+  {
+   "label": "Bahasa Indonesia · payments",
+   "lang": "id",
+   "standing": "press",
+   "hl": "id",
+   "gl": "ID",
+   "ceid": "ID:id",
+   "theme": "payments",
+   "query": "pembayaran perusahaan farmasi kepada dokter OR gratifikasi dokter obat"
+  },
+  {
+   "label": "Bahasa Indonesia · prescribing",
+   "lang": "id",
+   "standing": "press",
+   "hl": "id",
+   "gl": "ID",
+   "ceid": "ID:id",
+   "theme": "prescribing",
+   "query": "peresepan berlebihan OR resep tidak tepat OR antibiotik berlebihan"
+  },
+  {
+   "label": "Bahasa Indonesia · overdiagnosis",
+   "lang": "id",
+   "standing": "press",
+   "hl": "id",
+   "gl": "ID",
+   "ceid": "ID:id",
+   "theme": "overdiagnosis",
+   "query": "diagnosis berlebihan OR pengobatan berlebihan"
+  },
+  {
+   "label": "Bahasa Indonesia · procedures",
+   "lang": "id",
+   "standing": "press",
+   "hl": "id",
+   "gl": "ID",
+   "ceid": "ID:id",
+   "theme": "procedures",
+   "query": "operasi tidak perlu OR pemeriksaan tidak perlu"
+  },
+  {
+   "label": "Bahasa Indonesia · harm",
+   "lang": "id",
+   "standing": "press",
+   "hl": "id",
+   "gl": "ID",
+   "ceid": "ID:id",
+   "theme": "harm",
+   "query": "efek samping obat kematian OR obat ditarik dari peredaran"
+  },
+  {
+   "label": "Bahasa Indonesia · contamination",
+   "lang": "id",
+   "standing": "press",
+   "hl": "id",
+   "gl": "ID",
+   "ceid": "ID:id",
+   "theme": "contamination",
+   "query": "obat tercemar OR obat palsu OR darah terkontaminasi"
+  },
+  {
+   "label": "Bahasa Indonesia · global",
+   "lang": "id",
+   "standing": "press",
+   "hl": "id",
+   "gl": "ID",
+   "ceid": "ID:id",
+   "theme": "global",
+   "query": "obat substandar negara berkembang OR ekspor obat tidak aman"
+  },
+  {
+   "label": "Tiếng Việt · payments",
+   "lang": "vi",
+   "standing": "press",
+   "hl": "vi",
+   "gl": "VN",
+   "ceid": "VN:vi",
+   "theme": "payments",
+   "query": "hoa hồng cho bác sĩ kê đơn OR chi trả của hãng dược cho bác sĩ"
+  },
+  {
+   "label": "Tiếng Việt · prescribing",
+   "lang": "vi",
+   "standing": "press",
+   "hl": "vi",
+   "gl": "VN",
+   "ceid": "VN:vi",
+   "theme": "prescribing",
+   "query": "kê đơn quá mức OR lạm dụng kháng sinh kê đơn"
+  },
+  {
+   "label": "Tiếng Việt · overdiagnosis",
+   "lang": "vi",
+   "standing": "press",
+   "hl": "vi",
+   "gl": "VN",
+   "ceid": "VN:vi",
+   "theme": "overdiagnosis",
+   "query": "chẩn đoán quá mức OR điều trị quá mức"
+  },
+  {
+   "label": "Tiếng Việt · procedures",
+   "lang": "vi",
+   "standing": "press",
+   "hl": "vi",
+   "gl": "VN",
+   "ceid": "VN:vi",
+   "theme": "procedures",
+   "query": "phẫu thuật không cần thiết OR xét nghiệm không cần thiết"
+  },
+  {
+   "label": "Tiếng Việt · harm",
+   "lang": "vi",
+   "standing": "press",
+   "hl": "vi",
+   "gl": "VN",
+   "ceid": "VN:vi",
+   "theme": "harm",
+   "query": "tác dụng phụ thuốc tử vong OR thuốc bị thu hồi"
+  },
+  {
+   "label": "Tiếng Việt · contamination",
+   "lang": "vi",
+   "standing": "press",
+   "hl": "vi",
+   "gl": "VN",
+   "ceid": "VN:vi",
+   "theme": "contamination",
+   "query": "thuốc nhiễm bẩn OR thuốc giả OR máu nhiễm bệnh"
+  },
+  {
+   "label": "ไทย · payments",
+   "lang": "th",
+   "standing": "press",
+   "hl": "th",
+   "gl": "TH",
+   "ceid": "TH:th",
+   "theme": "payments",
+   "query": "บริษัทยาจ่ายเงินให้แพทย์ OR ของกำนัลจากบริษัทยา"
+  },
+  {
+   "label": "ไทย · prescribing",
+   "lang": "th",
+   "standing": "press",
+   "hl": "th",
+   "gl": "TH",
+   "ceid": "TH:th",
+   "theme": "prescribing",
+   "query": "สั่งยาเกินจำเป็น OR การใช้ยาปฏิชีวนะเกินความจำเป็น"
+  },
+  {
+   "label": "ไทย · overdiagnosis",
+   "lang": "th",
+   "standing": "press",
+   "hl": "th",
+   "gl": "TH",
+   "ceid": "TH:th",
+   "theme": "overdiagnosis",
+   "query": "การวินิจฉัยเกินจำเป็น OR การรักษาเกินจำเป็น"
+  },
+  {
+   "label": "ไทย · procedures",
+   "lang": "th",
+   "standing": "press",
+   "hl": "th",
+   "gl": "TH",
+   "ceid": "TH:th",
+   "theme": "procedures",
+   "query": "ผ่าตัดโดยไม่จำเป็น OR ตรวจโดยไม่จำเป็น"
+  },
+  {
+   "label": "ไทย · harm",
+   "lang": "th",
+   "standing": "press",
+   "hl": "th",
+   "gl": "TH",
+   "ceid": "TH:th",
+   "theme": "harm",
+   "query": "ผลข้างเคียงยา เสียชีวิต OR ถอนยาออกจากตลาด"
+  },
+  {
+   "label": "ไทย · contamination",
+   "lang": "th",
+   "standing": "press",
+   "hl": "th",
+   "gl": "TH",
+   "ceid": "TH:th",
+   "theme": "contamination",
+   "query": "ยาปนเปื้อน OR ยาปลอม OR เลือดปนเปื้อน"
+  },
+  {
+   "label": "日本語 · payments",
+   "lang": "ja",
+   "standing": "press",
+   "hl": "ja",
+   "gl": "JP",
+   "ceid": "JP:ja",
+   "theme": "payments",
+   "query": "製薬会社から医師への資金提供 OR 医師 謝金 製薬 透明性"
+  },
+  {
+   "label": "日本語 · prescribing",
+   "lang": "ja",
+   "standing": "press",
+   "hl": "ja",
+   "gl": "JP",
+   "ceid": "JP:ja",
+   "theme": "prescribing",
+   "query": "過剰処方 OR 不適切な処方 OR 抗菌薬 過剰投与"
+  },
+  {
+   "label": "日本語 · overdiagnosis",
+   "lang": "ja",
+   "standing": "press",
+   "hl": "ja",
+   "gl": "JP",
+   "ceid": "JP:ja",
+   "theme": "overdiagnosis",
+   "query": "過剰診断 OR 過剰医療 OR 病気づくり"
+  },
+  {
+   "label": "日本語 · procedures",
+   "lang": "ja",
+   "standing": "press",
+   "hl": "ja",
+   "gl": "JP",
+   "ceid": "JP:ja",
+   "theme": "procedures",
+   "query": "不必要な手術 OR 不要な検査"
+  },
+  {
+   "label": "日本語 · harm",
+   "lang": "ja",
+   "standing": "press",
+   "hl": "ja",
+   "gl": "JP",
+   "ceid": "JP:ja",
+   "theme": "harm",
+   "query": "薬の副作用 死亡 OR 医薬品 回収 安全性"
+  },
+  {
+   "label": "日本語 · trials",
+   "lang": "ja",
+   "standing": "press",
+   "hl": "ja",
+   "gl": "JP",
+   "ceid": "JP:ja",
+   "theme": "trials",
+   "query": "臨床試験 データ隠蔽 OR 論文撤回 OR データ捏造"
+  },
+  {
+   "label": "日本語 · capture",
+   "lang": "ja",
+   "standing": "press",
+   "hl": "ja",
+   "gl": "JP",
+   "ceid": "JP:ja",
+   "theme": "capture",
+   "query": "天下り 厚労省 製薬 OR 利益相反 医薬品医療機器総合機構"
+  },
+  {
+   "label": "日本語 · contamination",
+   "lang": "ja",
+   "standing": "press",
+   "hl": "ja",
+   "gl": "JP",
+   "ceid": "JP:ja",
+   "theme": "contamination",
+   "query": "医薬品 汚染 OR 偽造医薬品 OR 薬害エイズ"
+  },
+  {
+   "label": "한국어 · payments",
+   "lang": "ko",
+   "standing": "press",
+   "hl": "ko",
+   "gl": "KR",
+   "ceid": "KR:ko",
+   "theme": "payments",
+   "query": "제약사 의사 리베이트 OR 제약회사 의사 금품 제공"
+  },
+  {
+   "label": "한국어 · prescribing",
+   "lang": "ko",
+   "standing": "press",
+   "hl": "ko",
+   "gl": "KR",
+   "ceid": "KR:ko",
+   "theme": "prescribing",
+   "query": "과잉 처방 OR 부적절한 처방 OR 항생제 과다 처방"
+  },
+  {
+   "label": "한국어 · overdiagnosis",
+   "lang": "ko",
+   "standing": "press",
+   "hl": "ko",
+   "gl": "KR",
+   "ceid": "KR:ko",
+   "theme": "overdiagnosis",
+   "query": "과잉 진단 OR 과잉 진료 OR 질병 만들기"
+  },
+  {
+   "label": "한국어 · procedures",
+   "lang": "ko",
+   "standing": "press",
+   "hl": "ko",
+   "gl": "KR",
+   "ceid": "KR:ko",
+   "theme": "procedures",
+   "query": "불필요한 수술 OR 불필요한 검사"
+  },
+  {
+   "label": "한국어 · harm",
+   "lang": "ko",
+   "standing": "press",
+   "hl": "ko",
+   "gl": "KR",
+   "ceid": "KR:ko",
+   "theme": "harm",
+   "query": "약물 부작용 사망 OR 의약품 회수 안전성"
+  },
+  {
+   "label": "한국어 · trials",
+   "lang": "ko",
+   "standing": "press",
+   "hl": "ko",
+   "gl": "KR",
+   "ceid": "KR:ko",
+   "theme": "trials",
+   "query": "임상시험 자료 은폐 OR 논문 철회 OR 데이터 조작"
+  },
+  {
+   "label": "한국어 · capture",
+   "lang": "ko",
+   "standing": "press",
+   "hl": "ko",
+   "gl": "KR",
+   "ceid": "KR:ko",
+   "theme": "capture",
+   "query": "전관예우 식약처 OR 이해충돌 의약품 규제"
+  },
+  {
+   "label": "한국어 · contamination",
+   "lang": "ko",
+   "standing": "press",
+   "hl": "ko",
+   "gl": "KR",
+   "ceid": "KR:ko",
+   "theme": "contamination",
+   "query": "오염된 의약품 OR 위조 의약품 OR 오염 혈액"
+  },
+  {
+   "label": "中文 (台灣) · payments",
+   "lang": "zh",
+   "standing": "press",
+   "hl": "zh-TW",
+   "gl": "TW",
+   "ceid": "TW:zh-Hant",
+   "theme": "payments",
+   "query": "藥企向醫生付款 OR 醫生回扣 藥企 OR 藥廠 醫師 費用 透明"
+  },
+  {
+   "label": "中文 (台灣) · prescribing",
+   "lang": "zh",
+   "standing": "press",
+   "hl": "zh-TW",
+   "gl": "TW",
+   "ceid": "TW:zh-Hant",
+   "theme": "prescribing",
+   "query": "過度用藥 OR 不合理用藥 OR 抗生素濫用 處方"
+  },
+  {
+   "label": "中文 (台灣) · overdiagnosis",
+   "lang": "zh",
+   "standing": "press",
+   "hl": "zh-TW",
+   "gl": "TW",
+   "ceid": "TW:zh-Hant",
+   "theme": "overdiagnosis",
+   "query": "過度診斷 OR 過度醫療 OR 製造疾病"
+  },
+  {
+   "label": "中文 (台灣) · procedures",
+   "lang": "zh",
+   "standing": "press",
+   "hl": "zh-TW",
+   "gl": "TW",
+   "ceid": "TW:zh-Hant",
+   "theme": "procedures",
+   "query": "不必要的手術 OR 不必要的檢查"
+  },
+  {
+   "label": "中文 (台灣) · harm",
+   "lang": "zh",
+   "standing": "press",
+   "hl": "zh-TW",
+   "gl": "TW",
+   "ceid": "TW:zh-Hant",
+   "theme": "harm",
+   "query": "藥物不良反應 死亡 OR 藥品召回 安全"
+  },
+  {
+   "label": "中文 (台灣) · trials",
+   "lang": "zh",
+   "standing": "press",
+   "hl": "zh-TW",
+   "gl": "TW",
+   "ceid": "TW:zh-Hant",
+   "theme": "trials",
+   "query": "臨牀試驗資料隱瞞 OR 論文撤稿 OR 資料造假"
+  },
+  {
+   "label": "中文 (台灣) · capture",
+   "lang": "zh",
+   "standing": "press",
+   "hl": "zh-TW",
+   "gl": "TW",
+   "ceid": "TW:zh-Hant",
+   "theme": "capture",
+   "query": "旋轉門 藥監局 OR 利益衝突 藥品監管"
+  },
+  {
+   "label": "中文 (台灣) · contamination",
+   "lang": "zh",
+   "standing": "press",
+   "hl": "zh-TW",
+   "gl": "TW",
+   "ceid": "TW:zh-Hant",
+   "theme": "contamination",
+   "query": "藥品汙染 OR 假藥 OR 血液汙染"
+  },
+  {
+   "label": "中文 (香港) · payments",
+   "lang": "zh",
+   "standing": "press",
+   "hl": "zh-HK",
+   "gl": "HK",
+   "ceid": "HK:zh-Hant",
+   "theme": "payments",
+   "query": "藥企向醫生付款 OR 醫生回扣 藥企 OR 藥廠 醫師 費用 透明"
+  },
+  {
+   "label": "中文 (香港) · prescribing",
+   "lang": "zh",
+   "standing": "press",
+   "hl": "zh-HK",
+   "gl": "HK",
+   "ceid": "HK:zh-Hant",
+   "theme": "prescribing",
+   "query": "過度用藥 OR 不合理用藥 OR 抗生素濫用 處方"
+  },
+  {
+   "label": "中文 (香港) · overdiagnosis",
+   "lang": "zh",
+   "standing": "press",
+   "hl": "zh-HK",
+   "gl": "HK",
+   "ceid": "HK:zh-Hant",
+   "theme": "overdiagnosis",
+   "query": "過度診斷 OR 過度醫療 OR 製造疾病"
+  },
+  {
+   "label": "中文 (香港) · procedures",
+   "lang": "zh",
+   "standing": "press",
+   "hl": "zh-HK",
+   "gl": "HK",
+   "ceid": "HK:zh-Hant",
+   "theme": "procedures",
+   "query": "不必要的手術 OR 不必要的檢查"
+  },
+  {
+   "label": "中文 (香港) · harm",
+   "lang": "zh",
+   "standing": "press",
+   "hl": "zh-HK",
+   "gl": "HK",
+   "ceid": "HK:zh-Hant",
+   "theme": "harm",
+   "query": "藥物不良反應 死亡 OR 藥品召回 安全"
+  },
+  {
+   "label": "中文 (香港) · trials",
+   "lang": "zh",
+   "standing": "press",
+   "hl": "zh-HK",
+   "gl": "HK",
+   "ceid": "HK:zh-Hant",
+   "theme": "trials",
+   "query": "臨牀試驗數據隱瞞 OR 論文撤稿 OR 數據造假"
+  },
+  {
+   "label": "中文 (香港) · capture",
+   "lang": "zh",
+   "standing": "press",
+   "hl": "zh-HK",
+   "gl": "HK",
+   "ceid": "HK:zh-Hant",
+   "theme": "capture",
+   "query": "旋轉門 藥監局 OR 利益衝突 藥品監管"
+  },
+  {
+   "label": "中文 (香港) · contamination",
+   "lang": "zh",
+   "standing": "press",
+   "hl": "zh-HK",
+   "gl": "HK",
+   "ceid": "HK:zh-Hant",
+   "theme": "contamination",
+   "query": "藥品污染 OR 假藥 OR 血液污染"
+  },
+  {
+   "label": "हिन्दी · payments",
+   "lang": "hi",
+   "standing": "press",
+   "hl": "hi",
+   "gl": "IN",
+   "ceid": "IN:hi",
+   "theme": "payments",
+   "query": "दवा कंपनियों से डॉक्टरों को भुगतान OR डॉक्टरों को उपहार दवा कंपनी"
+  },
+  {
+   "label": "हिन्दी · prescribing",
+   "lang": "hi",
+   "standing": "press",
+   "hl": "hi",
+   "gl": "IN",
+   "ceid": "IN:hi",
+   "theme": "prescribing",
+   "query": "अत्यधिक दवा लिखना OR अनुचित नुस्खा OR एंटीबायोटिक का अत्यधिक उपयोग"
+  },
+  {
+   "label": "हिन्दी · overdiagnosis",
+   "lang": "hi",
+   "standing": "press",
+   "hl": "hi",
+   "gl": "IN",
+   "ceid": "IN:hi",
+   "theme": "overdiagnosis",
+   "query": "अति निदान OR अत्यधिक इलाज"
+  },
+  {
+   "label": "हिन्दी · procedures",
+   "lang": "hi",
+   "standing": "press",
+   "hl": "hi",
+   "gl": "IN",
+   "ceid": "IN:hi",
+   "theme": "procedures",
+   "query": "अनावश्यक सर्जरी OR अनावश्यक जांच"
+  },
+  {
+   "label": "हिन्दी · harm",
+   "lang": "hi",
+   "standing": "press",
+   "hl": "hi",
+   "gl": "IN",
+   "ceid": "IN:hi",
+   "theme": "harm",
+   "query": "दवा के दुष्प्रभाव मौत OR दवा बाजार से वापस"
+  },
+  {
+   "label": "हिन्दी · contamination",
+   "lang": "hi",
+   "standing": "press",
+   "hl": "hi",
+   "gl": "IN",
+   "ceid": "IN:hi",
+   "theme": "contamination",
+   "query": "दूषित दवा OR नकली दवा OR दूषित रक्त"
+  },
+  {
+   "label": "বাংলা · payments",
+   "lang": "bn",
+   "standing": "press",
+   "hl": "bn",
+   "gl": "BD",
+   "ceid": "BD:bn",
+   "theme": "payments",
+   "query": "ওষুধ কোম্পানি থেকে চিকিৎসকদের অর্থ OR চিকিৎসকদের উপহার ওষুধ কোম্পানি"
+  },
+  {
+   "label": "বাংলা · prescribing",
+   "lang": "bn",
+   "standing": "press",
+   "hl": "bn",
+   "gl": "BD",
+   "ceid": "BD:bn",
+   "theme": "prescribing",
+   "query": "অতিরিক্ত ওষুধ প্রেসক্রিপশন OR অ্যান্টিবায়োটিকের অপব্যবহার"
+  },
+  {
+   "label": "বাংলা · overdiagnosis",
+   "lang": "bn",
+   "standing": "press",
+   "hl": "bn",
+   "gl": "BD",
+   "ceid": "BD:bn",
+   "theme": "overdiagnosis",
+   "query": "অতিরিক্ত রোগনির্ণয় OR অতিরিক্ত চিকিৎসা"
+  },
+  {
+   "label": "বাংলা · harm",
+   "lang": "bn",
+   "standing": "press",
+   "hl": "bn",
+   "gl": "BD",
+   "ceid": "BD:bn",
+   "theme": "harm",
+   "query": "ওষুধের পার্শ্বপ্রতিক্রিয়া মৃত্যু OR ওষুধ প্রত্যাহার"
+  },
+  {
+   "label": "বাংলা · contamination",
+   "lang": "bn",
+   "standing": "press",
+   "hl": "bn",
+   "gl": "BD",
+   "ceid": "BD:bn",
+   "theme": "contamination",
+   "query": "দূষিত ওষুধ OR নকল ওষুধ OR দূষিত রক্ত"
+  },
+  {
+   "label": "العربية (مصر) · payments",
+   "lang": "ar",
+   "standing": "press",
+   "hl": "ar",
+   "gl": "EG",
+   "ceid": "EG:ar",
+   "theme": "payments",
+   "query": "مدفوعات شركات الأدوية للأطباء OR هدايا شركات الدواء للأطباء"
+  },
+  {
+   "label": "العربية (مصر) · prescribing",
+   "lang": "ar",
+   "standing": "press",
+   "hl": "ar",
+   "gl": "EG",
+   "ceid": "EG:ar",
+   "theme": "prescribing",
+   "query": "الإفراط في وصف الأدوية OR وصف غير مناسب OR الإفراط في المضادات الحيوية"
+  },
+  {
+   "label": "العربية (مصر) · overdiagnosis",
+   "lang": "ar",
+   "standing": "press",
+   "hl": "ar",
+   "gl": "EG",
+   "ceid": "EG:ar",
+   "theme": "overdiagnosis",
+   "query": "الإفراط في التشخيص OR الإفراط في العلاج OR اختلاق الأمراض"
+  },
+  {
+   "label": "العربية (مصر) · procedures",
+   "lang": "ar",
+   "standing": "press",
+   "hl": "ar",
+   "gl": "EG",
+   "ceid": "EG:ar",
+   "theme": "procedures",
+   "query": "عمليات جراحية غير ضرورية OR فحوصات غير ضرورية"
+  },
+  {
+   "label": "العربية (مصر) · harm",
+   "lang": "ar",
+   "standing": "press",
+   "hl": "ar",
+   "gl": "EG",
+   "ceid": "EG:ar",
+   "theme": "harm",
+   "query": "الآثار الجانبية للأدوية وفيات OR سحب دواء من السوق"
+  },
+  {
+   "label": "العربية (مصر) · trials",
+   "lang": "ar",
+   "standing": "press",
+   "hl": "ar",
+   "gl": "EG",
+   "ceid": "EG:ar",
+   "theme": "trials",
+   "query": "إخفاء بيانات التجارب السريرية OR سحب دراسة OR تزوير بيانات"
+  },
+  {
+   "label": "العربية (مصر) · contamination",
+   "lang": "ar",
+   "standing": "press",
+   "hl": "ar",
+   "gl": "EG",
+   "ceid": "EG:ar",
+   "theme": "contamination",
+   "query": "دواء ملوث OR أدوية مزيفة OR دم ملوث"
+  },
+  {
+   "label": "العربية (مصر) · global",
+   "lang": "ar",
+   "standing": "press",
+   "hl": "ar",
+   "gl": "EG",
+   "ceid": "EG:ar",
+   "theme": "global",
+   "query": "أدوية دون المستوى في الدول الفقيرة OR تصدير أدوية غير آمنة"
+  },
+  {
+   "label": "العربية (الإمارات) · payments",
+   "lang": "ar",
+   "standing": "press",
+   "hl": "ar",
+   "gl": "AE",
+   "ceid": "AE:ar",
+   "theme": "payments",
+   "query": "مدفوعات شركات الأدوية للأطباء OR هدايا شركات الدواء للأطباء"
+  },
+  {
+   "label": "العربية (الإمارات) · prescribing",
+   "lang": "ar",
+   "standing": "press",
+   "hl": "ar",
+   "gl": "AE",
+   "ceid": "AE:ar",
+   "theme": "prescribing",
+   "query": "الإفراط في وصف الأدوية OR وصف غير مناسب OR الإفراط في المضادات الحيوية"
+  },
+  {
+   "label": "العربية (الإمارات) · overdiagnosis",
+   "lang": "ar",
+   "standing": "press",
+   "hl": "ar",
+   "gl": "AE",
+   "ceid": "AE:ar",
+   "theme": "overdiagnosis",
+   "query": "الإفراط في التشخيص OR الإفراط في العلاج OR اختلاق الأمراض"
+  },
+  {
+   "label": "العربية (الإمارات) · procedures",
+   "lang": "ar",
+   "standing": "press",
+   "hl": "ar",
+   "gl": "AE",
+   "ceid": "AE:ar",
+   "theme": "procedures",
+   "query": "عمليات جراحية غير ضرورية OR فحوصات غير ضرورية"
+  },
+  {
+   "label": "العربية (الإمارات) · harm",
+   "lang": "ar",
+   "standing": "press",
+   "hl": "ar",
+   "gl": "AE",
+   "ceid": "AE:ar",
+   "theme": "harm",
+   "query": "الآثار الجانبية للأدوية وفيات OR سحب دواء من السوق"
+  },
+  {
+   "label": "العربية (الإمارات) · trials",
+   "lang": "ar",
+   "standing": "press",
+   "hl": "ar",
+   "gl": "AE",
+   "ceid": "AE:ar",
+   "theme": "trials",
+   "query": "إخفاء بيانات التجارب السريرية OR سحب دراسة OR تزوير بيانات"
+  },
+  {
+   "label": "العربية (الإمارات) · contamination",
+   "lang": "ar",
+   "standing": "press",
+   "hl": "ar",
+   "gl": "AE",
+   "ceid": "AE:ar",
+   "theme": "contamination",
+   "query": "دواء ملوث OR أدوية مزيفة OR دم ملوث"
+  },
+  {
+   "label": "العربية (الإمارات) · global",
+   "lang": "ar",
+   "standing": "press",
+   "hl": "ar",
+   "gl": "AE",
+   "ceid": "AE:ar",
+   "theme": "global",
+   "query": "أدوية دون المستوى في الدول الفقيرة OR تصدير أدوية غير آمنة"
+  },
+  {
+   "label": "فارسی · payments",
+   "lang": "fa",
+   "standing": "press",
+   "hl": "fa",
+   "gl": "IR",
+   "ceid": "IR:fa",
+   "theme": "payments",
+   "query": "پرداخت شرکت‌های دارویی به پزشکان OR هدایای شرکت‌های دارویی"
+  },
+  {
+   "label": "فارسی · prescribing",
+   "lang": "fa",
+   "standing": "press",
+   "hl": "fa",
+   "gl": "IR",
+   "ceid": "IR:fa",
+   "theme": "prescribing",
+   "query": "تجویز بی‌رویه دارو OR مصرف بی‌رویه آنتی‌بیوتیک"
+  },
+  {
+   "label": "فارسی · overdiagnosis",
+   "lang": "fa",
+   "standing": "press",
+   "hl": "fa",
+   "gl": "IR",
+   "ceid": "IR:fa",
+   "theme": "overdiagnosis",
+   "query": "تشخیص بیش از حد OR درمان بیش از حد"
+  },
+  {
+   "label": "فارسی · harm",
+   "lang": "fa",
+   "standing": "press",
+   "hl": "fa",
+   "gl": "IR",
+   "ceid": "IR:fa",
+   "theme": "harm",
+   "query": "عوارض جانبی دارو مرگ OR جمع‌آوری دارو از بازار"
+  },
+  {
+   "label": "فارسی · contamination",
+   "lang": "fa",
+   "standing": "press",
+   "hl": "fa",
+   "gl": "IR",
+   "ceid": "IR:fa",
+   "theme": "contamination",
+   "query": "داروی آلوده OR داروی تقلبی OR خون آلوده"
+  },
+  {
+   "label": "Ελληνικά · payments",
+   "lang": "el",
+   "standing": "press",
+   "hl": "el",
+   "gl": "GR",
+   "ceid": "GR:el",
+   "theme": "payments",
+   "query": "πληρωμές φαρμακευτικών εταιρειών σε γιατρούς OR δώρα σε ιατρούς φαρμακοβιομηχανία"
+  },
+  {
+   "label": "Ελληνικά · prescribing",
+   "lang": "el",
+   "standing": "press",
+   "hl": "el",
+   "gl": "GR",
+   "ceid": "GR:el",
+   "theme": "prescribing",
+   "query": "υπερσυνταγογράφηση OR ακατάλληλη συνταγογράφηση OR κατάχρηση αντιβιοτικών"
+  },
+  {
+   "label": "Ελληνικά · overdiagnosis",
+   "lang": "el",
+   "standing": "press",
+   "hl": "el",
+   "gl": "GR",
+   "ceid": "GR:el",
+   "theme": "overdiagnosis",
+   "query": "υπερδιάγνωση OR υπερθεραπεία"
+  },
+  {
+   "label": "Ελληνικά · procedures",
+   "lang": "el",
+   "standing": "press",
+   "hl": "el",
+   "gl": "GR",
+   "ceid": "GR:el",
+   "theme": "procedures",
+   "query": "περιττές επεμβάσεις OR περιττές εξετάσεις"
+  },
+  {
+   "label": "Ελληνικά · harm",
+   "lang": "el",
+   "standing": "press",
+   "hl": "el",
+   "gl": "GR",
+   "ceid": "GR:el",
+   "theme": "harm",
+   "query": "παρενέργειες φαρμάκων θάνατοι OR απόσυρση φαρμάκου"
+  },
+  {
+   "label": "Ελληνικά · contamination",
+   "lang": "el",
+   "standing": "press",
+   "hl": "el",
+   "gl": "GR",
+   "ceid": "GR:el",
+   "theme": "contamination",
+   "query": "μολυσμένο φάρμακο OR πλαστά φάρμακα OR μολυσμένο αίμα"
+  },
+  {
+   "label": "Svenska · payments",
+   "lang": "sv",
+   "standing": "press",
+   "hl": "sv",
+   "gl": "SE",
+   "ceid": "SE:sv",
+   "theme": "payments",
+   "query": "läkemedelsbolagens betalningar till läkare OR gåvor till läkare läkemedelsindustrin"
+  },
+  {
+   "label": "Svenska · prescribing",
+   "lang": "sv",
+   "standing": "press",
+   "hl": "sv",
+   "gl": "SE",
+   "ceid": "SE:sv",
+   "theme": "prescribing",
+   "query": "överförskrivning OR olämplig förskrivning OR antibiotika förskrivs för ofta"
+  },
+  {
+   "label": "Svenska · overdiagnosis",
+   "lang": "sv",
+   "standing": "press",
+   "hl": "sv",
+   "gl": "SE",
+   "ceid": "SE:sv",
+   "theme": "overdiagnosis",
+   "query": "överdiagnostik OR överbehandling"
+  },
+  {
+   "label": "Svenska · procedures",
+   "lang": "sv",
+   "standing": "press",
+   "hl": "sv",
+   "gl": "SE",
+   "ceid": "SE:sv",
+   "theme": "procedures",
+   "query": "onödiga operationer OR onödiga undersökningar"
+  },
+  {
+   "label": "Svenska · harm",
+   "lang": "sv",
+   "standing": "press",
+   "hl": "sv",
+   "gl": "SE",
+   "ceid": "SE:sv",
+   "theme": "harm",
+   "query": "läkemedelsbiverkningar dödsfall OR läkemedel dras tillbaka"
+  },
+  {
+   "label": "Svenska · contamination",
+   "lang": "sv",
+   "standing": "press",
+   "hl": "sv",
+   "gl": "SE",
+   "ceid": "SE:sv",
+   "theme": "contamination",
+   "query": "förorenat läkemedel OR förfalskade läkemedel OR smittat blod"
+  },
+  {
+   "label": "Kiswahili · payments",
+   "lang": "sw",
+   "standing": "press",
+   "hl": "sw",
+   "gl": "KE",
+   "ceid": "KE:sw",
+   "theme": "payments",
+   "query": "malipo ya kampuni za dawa kwa madaktari"
+  },
+  {
+   "label": "Kiswahili · prescribing",
+   "lang": "sw",
+   "standing": "press",
+   "hl": "sw",
+   "gl": "KE",
+   "ceid": "KE:sw",
+   "theme": "prescribing",
+   "query": "kuandika dawa kupita kiasi OR matumizi mabaya ya antibiotiki"
+  },
+  {
+   "label": "Kiswahili · harm",
+   "lang": "sw",
+   "standing": "press",
+   "hl": "sw",
+   "gl": "KE",
+   "ceid": "KE:sw",
+   "theme": "harm",
+   "query": "madhara ya dawa vifo OR dawa kuondolewa sokoni"
+  },
+  {
+   "label": "Kiswahili · contamination",
+   "lang": "sw",
+   "standing": "press",
+   "hl": "sw",
+   "gl": "KE",
+   "ceid": "KE:sw",
+   "theme": "contamination",
+   "query": "dawa bandia OR dawa zilizochafuliwa"
+  },
+  {
+   "label": "አማርኛ · payments",
+   "lang": "am",
+   "standing": "press",
+   "hl": "am",
+   "gl": "ET",
+   "ceid": "ET:am",
+   "theme": "payments",
+   "query": "የመድኃኒት ኩባንያዎች ለሐኪሞች ክፍያ"
+  },
+  {
+   "label": "አማርኛ · prescribing",
+   "lang": "am",
+   "standing": "press",
+   "hl": "am",
+   "gl": "ET",
+   "ceid": "ET:am",
+   "theme": "prescribing",
+   "query": "ከመጠን በላይ መድኃኒት ማዘዝ OR አንቲባዮቲክ አላግባብ"
+  },
+  {
+   "label": "አማርኛ · harm",
+   "lang": "am",
+   "standing": "press",
+   "hl": "am",
+   "gl": "ET",
+   "ceid": "ET:am",
+   "theme": "harm",
+   "query": "የመድኃኒት የጎንዮሽ ጉዳት ሞት OR መድኃኒት ከገበያ ተነሳ"
+  },
+  {
+   "label": "አማርኛ · contamination",
+   "lang": "am",
+   "standing": "press",
+   "hl": "am",
+   "gl": "ET",
+   "ceid": "ET:am",
+   "theme": "contamination",
+   "query": "የተበከለ መድኃኒት OR ሐሰተኛ መድኃኒት"
+  },
+  {
+   "label": "Hausa · payments",
+   "lang": "ha",
+   "standing": "press",
+   "hl": "ha",
+   "gl": "NG",
+   "ceid": "NG:ha",
+   "theme": "payments",
+   "query": "kudin da kamfanonin magani ke bai wa likitoci"
+  },
+  {
+   "label": "Hausa · prescribing",
+   "lang": "ha",
+   "standing": "press",
+   "hl": "ha",
+   "gl": "NG",
+   "ceid": "NG:ha",
+   "theme": "prescribing",
+   "query": "rubuta magani fiye da kima OR yawan amfani da maganin kashe kwayoyin cuta"
+  },
+  {
+   "label": "Hausa · harm",
+   "lang": "ha",
+   "standing": "press",
+   "hl": "ha",
+   "gl": "NG",
+   "ceid": "NG:ha",
+   "theme": "harm",
+   "query": "illar magani mutuwa OR an janye magani daga kasuwa"
+  },
+  {
+   "label": "Hausa · contamination",
+   "lang": "ha",
+   "standing": "press",
+   "hl": "ha",
+   "gl": "NG",
+   "ceid": "NG:ha",
+   "theme": "contamination",
+   "query": "maganin jabu OR magani mai gurbata"
+  },
+  {
+   "label": "English (US) · guidelines",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "theme": "guidelines",
+   "query": "clinical guideline panel industry payments OR guideline authors conflict of interest OR treatment threshold widened"
+  },
+  {
+   "label": "Español · guidelines",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es",
+   "gl": "ES",
+   "ceid": "ES:es",
+   "theme": "guidelines",
+   "query": "panel de guías clínicas pagos de la industria OR autores de guías conflicto de interés"
+  },
+  {
+   "label": "Português (BR) · guidelines",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-BR",
+   "gl": "BR",
+   "ceid": "BR:pt-419",
+   "theme": "guidelines",
+   "query": "painel de diretrizes clínicas pagamentos da indústria OR autores de diretrizes conflito de interesses"
+  },
+  {
+   "label": "Français · guidelines",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "FR",
+   "ceid": "FR:fr",
+   "theme": "guidelines",
+   "query": "groupe de recommandations cliniques liens d'intérêts OR auteurs de recommandations conflits d'intérêts"
+  },
+  {
+   "label": "Deutsch · guidelines",
+   "lang": "de",
+   "standing": "press",
+   "hl": "de",
+   "gl": "DE",
+   "ceid": "DE:de",
+   "theme": "guidelines",
+   "query": "Leitlinien-Autoren Interessenkonflikte OR Leitliniengremium Industriezahlungen"
+  },
+  {
+   "label": "Italiano · guidelines",
+   "lang": "it",
+   "standing": "press",
+   "hl": "it",
+   "gl": "IT",
+   "ceid": "IT:it",
+   "theme": "guidelines",
+   "query": "panel di linee guida cliniche pagamenti dell'industria OR autori delle linee guida conflitti di interesse"
+  },
+  {
+   "label": "日本語 · guidelines",
+   "lang": "ja",
+   "standing": "press",
+   "hl": "ja",
+   "gl": "JP",
+   "ceid": "JP:ja",
+   "theme": "guidelines",
+   "query": "診療ガイドライン 作成委員 利益相反 OR 治療基準 拡大"
+  },
+  {
+   "label": "한국어 · guidelines",
+   "lang": "ko",
+   "standing": "press",
+   "hl": "ko",
+   "gl": "KR",
+   "ceid": "KR:ko",
+   "theme": "guidelines",
+   "query": "진료지침 위원 이해충돌 OR 치료 기준 확대"
+  },
+  {
+   "label": "中文 · guidelines",
+   "lang": "zh",
+   "standing": "press",
+   "hl": "zh-TW",
+   "gl": "TW",
+   "ceid": "TW:zh-Hant",
+   "theme": "guidelines",
+   "query": "臨牀指南 制定者 利益衝突 OR 治療標準 放寬"
+  },
+  {
+   "label": "English (US) · alternatives",
+   "lang": "en",
+   "standing": "press",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "theme": "alternatives",
+   "query": "deprescribing programme OR overdiagnosis campaign clinicians OR choosing wisely low-value care"
+  },
+  {
+   "label": "Español · alternatives",
+   "lang": "es",
+   "standing": "press",
+   "hl": "es",
+   "gl": "ES",
+   "ceid": "ES:es",
+   "theme": "alternatives",
+   "query": "desprescripción programa OR campaña contra el sobrediagnóstico OR \"no hacer\" recomendaciones"
+  },
+  {
+   "label": "Português (BR) · alternatives",
+   "lang": "pt",
+   "standing": "press",
+   "hl": "pt-BR",
+   "gl": "BR",
+   "ceid": "BR:pt-419",
+   "theme": "alternatives",
+   "query": "desprescrição programa OR campanha contra o sobrediagnóstico"
+  },
+  {
+   "label": "Français · alternatives",
+   "lang": "fr",
+   "standing": "press",
+   "hl": "fr",
+   "gl": "FR",
+   "ceid": "FR:fr",
+   "theme": "alternatives",
+   "query": "déprescription programme OR campagne contre le surdiagnostic"
+  },
+  {
+   "label": "Deutsch · alternatives",
+   "lang": "de",
+   "standing": "press",
+   "hl": "de",
+   "gl": "DE",
+   "ceid": "DE:de",
+   "theme": "alternatives",
+   "query": "Deprescribing Programm OR Kampagne gegen Überdiagnose OR \"Klug entscheiden\""
+  },
+  {
+   "label": "Italiano · alternatives",
+   "lang": "it",
+   "standing": "press",
+   "hl": "it",
+   "gl": "IT",
+   "ceid": "IT:it",
+   "theme": "alternatives",
+   "query": "deprescrizione programma OR campagna contro la sovradiagnosi OR \"fare di più non significa fare meglio\""
+  },
+  {
+   "label": "日本語 · alternatives",
+   "lang": "ja",
+   "standing": "press",
+   "hl": "ja",
+   "gl": "JP",
+   "ceid": "JP:ja",
+   "theme": "alternatives",
+   "query": "処方の見直し 減薬 OR 過剰診断 啓発 活動"
+  },
+  {
+   "label": "한국어 · alternatives",
+   "lang": "ko",
+   "standing": "press",
+   "hl": "ko",
+   "gl": "KR",
+   "ceid": "KR:ko",
+   "theme": "alternatives",
+   "query": "처방 축소 프로그램 OR 과잉진단 캠페인"
+  }
+ ],
+ "events": [
+  {
+   "label": "WHO and agency findings",
+   "lang": "en",
+   "standing": "official",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "query": "WHO medicines report OR essential medicines list OR substandard falsified medical products"
+  },
+  {
+   "label": "Regulator actions",
+   "lang": "en",
+   "standing": "official",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "query": "FDA warning letter OR EMA referral OR MHRA action drug device safety"
+  },
+  {
+   "label": "Approvals and withdrawals",
+   "lang": "en",
+   "standing": "official",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "query": "drug approval withdrawn OR accelerated approval revoked OR device recall class"
+  },
+  {
+   "label": "Court rulings and settlements",
+   "lang": "en",
+   "standing": "official",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "query": "pharmaceutical settlement OR drug company fined OR device litigation verdict"
+  },
+  {
+   "label": "Public inquiries",
+   "lang": "en",
+   "standing": "official",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "query": "\"public inquiry\" infected blood OR medical implant OR patient harm inquiry"
+  },
+  {
+   "label": "Payments research",
+   "lang": "en",
+   "standing": "research",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "query": "\"Open Payments\" analysis OR industry payments prescribing study"
+  },
+  {
+   "label": "Trial transparency",
+   "lang": "en",
+   "standing": "research",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "query": "trial results unreported OR AllTrials OR clinical trial transparency audit"
+  },
+  {
+   "label": "Evidence reviews",
+   "lang": "en",
+   "standing": "research",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "query": "Cochrane review OR systematic review drug efficacy questioned"
+  },
+  {
+   "label": "Overdiagnosis research",
+   "lang": "en",
+   "standing": "research",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "query": "overdiagnosis study OR screening harms OR diagnostic threshold widened"
+  },
+  {
+   "label": "Pricing and patents",
+   "lang": "en",
+   "standing": "research",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "query": "drug pricing analysis OR patent thicket medicine OR pay-for-delay"
+  },
+  {
+   "label": "Access campaigns",
+   "lang": "en",
+   "standing": "rights",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "query": "\"access to medicines\" campaign OR compulsory licence demand OR patent pool"
+  },
+  {
+   "label": "Patient harm groups",
+   "lang": "en",
+   "standing": "rights",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "query": "harmed patients group OR implant campaigners OR medicine safety campaign"
+  },
+  {
+   "label": "Health data and privacy",
+   "lang": "en",
+   "standing": "rights",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "query": "health data sharing objection OR patient records commercial deal"
+  },
+  {
+   "label": "Mental health prescribing",
+   "lang": "en",
+   "standing": "rights",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "query": "antidepressant withdrawal guidance OR prescribed harm campaign"
+  },
+  {
+   "label": "Marketing and patient groups",
+   "lang": "en",
+   "standing": "rights",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "query": "patient group industry funding OR awareness campaign pharmaceutical funded"
+  },
+  {
+   "label": "Global trials and exports",
+   "lang": "en",
+   "standing": "official",
+   "hl": "en-US",
+   "gl": "US",
+   "ceid": "US:en",
+   "query": "clinical trial low-income country OR export unapproved medicine investigation"
+  }
+ ]
 }
